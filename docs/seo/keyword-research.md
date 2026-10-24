@@ -701,3 +701,38 @@ Only the most decision-relevant results are reproduced here. "(none)" means Goog
 - **crm for manufacturing** → companies, industry, business, best crm for manufacturing industry, zoho …, best …, for small manufacturing business, system …, monday …, crm analytics for manufacturing cloud
 - **salesforce vs hubspot** → crm, pricing, vs zoho, market share, reddit, comparison, for small business
 - **hubspot vs dynamics 365** → sales, marketing, crm, … integration
+
+---
+
+## 7. Addendum: AI engineering service (checked 25 October 2026)
+
+Added when the AI Engineering service (`/services/ai-engineering`) was created. As in the rest of this document, the evidence is Google Autocomplete suggestions only. **No search volumes, difficulty scores, or rankings were measured or are stated.**
+
+**Primary keyword:** `AI development services`, with `generative AI development services` as the main variant.
+
+**Why not "AI engineering services":** autocomplete for that phrase is dominated by *AI Engineering Services Limited*, the Air India aircraft-maintenance subsidiary. Searchers using the exact phrase are often looking for that company, so it is a poor primary target. "AI Engineering" stays as the page's name, because it describes the work accurately.
+
+**Autocomplete evidence: buyer phrases**
+- **ai development services** → company, in usa, india
+- **generative ai development services**
+- **ai consulting services**
+- **ai integration services** → for enterprises
+- **rag development services** → company
+- **ai agent development** → company, cost, lifecycle, framework
+- **mlops consulting services**
+- **custom / enterprise / private llm development services**
+
+**Autocomplete evidence: informational phrases (answered in the FAQs and the article)**
+- **llm evaluation** → framework, metrics
+- **rag vs fine tuning** → vs prompt engineering, when to use
+- **ai readiness assessment**
+- **how to build an ai agent**
+- **ai implementation consultant**
+
+**How the evidence was used**
+- Title: "AI Development & Generative AI Integration Services". The meta description names LLM apps, RAG, agents, evaluation, guardrails, and MLOps.
+- Decision table: "Prompting, RAG, fine-tuning, or agents?" answers the *rag vs fine tuning (vs prompt engineering)* cluster.
+- FAQs: what RAG is, RAG vs fine-tuning, how to evaluate an LLM application, whether you need agents, AI development cost drivers (no prices), AI readiness, data privacy, and which models are used.
+- Supporting article: `/insights/llm-features-in-production` covers demo-to-production, evaluation sets, and why pilots stall.
+- No model-vendor partnership is claimed. Vendors are referred to generically ("commercial model APIs, managed model services on AWS, Azure, and Google Cloud, open-weight models").
+

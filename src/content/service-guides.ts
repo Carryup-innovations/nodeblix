@@ -19,6 +19,99 @@ export type ServiceGuide = {
 };
 
 export const serviceGuides: Record<string, ServiceGuide> = {
+  "ai-engineering": {
+    definition: {
+      q: "What is AI engineering?",
+      a: "AI engineering is the work of turning AI models into dependable product features and business workflows: choosing the model and design, connecting it to the right company data, testing output quality against real cases, adding guardrails, and operating it with monitoring, cost controls, and versioned releases. It treats a large language model as one component of a system, not the whole system.",
+      more: "Data science asks whether a model can do the task. AI engineering asks whether the feature built on it can be trusted every day, by every user, at a cost the business accepts. That depends heavily on data quality and delivery discipline, so this service works closely with our data engineering and DevOps practices.",
+      links: [
+        { href: "/services/data-engineering", label: "data engineering for AI-ready data" },
+        { href: "/insights/llm-features-in-production", label: "taking an LLM feature from demo to production" },
+      ],
+    },
+    comparison: {
+      title: "Prompting, RAG, fine-tuning, or agents?",
+      intro:
+        "These are the four common ways to adapt a language model to a business task. They are not rivals — most production systems combine the first two — but each solves a different problem.",
+      columns: ["Approach", "Best when", "Watch out for"],
+      rows: [
+        [
+          "Prompt engineering",
+          "The task needs general knowledge plus clear instructions and examples.",
+          "Fragile wording and no access to private or recent information.",
+        ],
+        [
+          "Retrieval-augmented generation (RAG)",
+          "Answers must draw on your own documents or records and cite their sources.",
+          "Quality depends on chunking, ranking, permissions, and content upkeep.",
+        ],
+        [
+          "Fine-tuning",
+          "You need a consistent format, tone, or narrow skill that prompting cannot reach.",
+          "Training data effort, retraining as needs change, and it does not add fresh facts.",
+        ],
+        [
+          "AI agents",
+          "The task spans several steps and tools, such as looking up, deciding, and acting.",
+          "Compounding errors, harder testing, and the need for limits and human approval.",
+        ],
+      ],
+      note: "We usually start with prompting and retrieval, then add fine-tuning or agents only when the evaluation shows they are needed.",
+    },
+    tradeoffs: [
+      {
+        title: "Hosted models versus self-hosted",
+        body: "Hosted APIs give the strongest models with no infrastructure to run. Self-hosted open-weight models give more control over data and unit cost, but you own capacity, upgrades, and GPU spend.",
+      },
+      {
+        title: "Larger models versus smaller ones",
+        body: "Bigger models handle ambiguity better and cost more per request. Smaller models are faster and cheaper for narrow tasks once evaluation shows they are good enough.",
+      },
+      {
+        title: "Automation versus human review",
+        body: "Full automation saves the most time and carries the most risk. Routing low-confidence or high-impact cases to a person is often the right first release.",
+      },
+      {
+        title: "Building versus buying",
+        body: "Packaged AI features in tools you already license can be enough for common tasks. Custom builds make sense when the workflow, data, or controls are specific to your business.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is retrieval-augmented generation (RAG)?",
+        a: "RAG is a design where an application first searches your own content — documents, tickets, records — for passages relevant to a question, then gives those passages to a language model to write the answer. It lets the model use private and current information without retraining, and lets users see the sources behind an answer.",
+      },
+      {
+        q: "When should we use RAG instead of fine-tuning?",
+        a: "Use RAG when the model needs facts that live in your content or change often. Use fine-tuning when the model needs a consistent behaviour — a format, a tone, a narrow classification skill — that prompting cannot achieve reliably. Fine-tuning does not keep a model up to date with new facts; retrieval does. Many systems use retrieval alone; some combine both.",
+      },
+      {
+        q: "How do you evaluate an LLM application?",
+        a: "We build a test set from real examples with agreed good answers, then score each version of the system against it: correctness, use of sources, refusals where the answer is unknown, safety checks, latency, and cost per request. Automated scoring, including model-graded checks, is calibrated against human review. The same set runs on every change, so quality is compared, not guessed.",
+      },
+      {
+        q: "Do we need AI agents?",
+        a: "Only if the task genuinely needs several steps and tool calls that cannot be fixed in advance. Many valuable features are a single well-grounded model call inside a normal workflow. When agents are justified, we limit the tools they can use, require approval for consequential actions, and trace every step.",
+      },
+      {
+        q: "How much does AI development cost?",
+        a: "The main drivers are the number of workflows in scope, the state of the data the feature depends on, the integrations required, the quality bar and how much evaluation it needs, and ongoing model usage, which is priced by the provider. A short framing and prototype phase, scored against an evaluation set, gives a realistic basis for estimating the full build and its running cost.",
+      },
+      {
+        q: "Is our data ready for AI?",
+        a: "Data is ready when the sources a feature needs are accessible, reasonably current, permissioned, and described well enough to search. An AI readiness review looks at those sources for one specific use case rather than the whole estate. Where gaps exist, the fix is usually ordinary data engineering: ownership, quality checks, and access control.",
+      },
+      {
+        q: "How do you keep company data private when using AI models?",
+        a: "We check provider data-retention and training terms, prefer enterprise endpoints or cloud-hosted model services within your own account, filter or mask sensitive fields before they reach a model, and enforce the user's permissions at retrieval time. Where policy requires it, open-weight models can run inside your infrastructure.",
+      },
+      {
+        q: "Which AI models and platforms do you work with?",
+        a: "We choose models per use case from commercial APIs, managed model services on AWS, Azure, and Google Cloud, and open-weight models that can be self-hosted. The system is designed so the model can be swapped after testing. Platform partnership badges are listed only once they are verified.",
+      },
+    ],
+  },
+
   "cloud-engineering": {
     definition: {
       q: "What does cloud engineering involve?",
@@ -466,6 +559,10 @@ export const serviceGuides: Record<string, ServiceGuide> = {
       {
         q: "Can you work with data we cannot move off-premises?",
         a: "Yes. The architecture can keep sensitive systems in place and still produce a governed analytical layer.",
+      },
+      {
+        q: "How does data engineering support AI projects?",
+        a: "AI features are only as reliable as the data they draw on. Retrieval needs current, documented, permissioned sources; machine learning needs consistent historical features; and both need lineage so a bad answer can be traced back to its input. That is ordinary data engineering — ownership, quality tests, and access control — done with AI use in mind. Our AI engineering service builds on it.",
       },
     ],
   },

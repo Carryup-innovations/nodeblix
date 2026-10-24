@@ -7,7 +7,7 @@ export const contentType = "image/png";
 export default function Image() {
   return renderOg({
     kicker: "Contact",
-    title: "Discuss a cloud, software, data, or CRM project",
+    title: "Discuss an AI, cloud, software, or data project",
     image: "/images/cta-atrium.jpg",
   });
 }

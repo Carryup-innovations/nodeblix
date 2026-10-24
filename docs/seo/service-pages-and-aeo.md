@@ -2,7 +2,7 @@
 
 ## How every service page is now structured
 
-Each of the seven pages at `/services/{slug}` renders from `src/content/services.ts` (page copy) and `src/content/service-guides.ts` (definition, decision table, trade-offs, FAQs) through `src/components/ServiceView.tsx`. Pages are about 1,200–1,700 words.
+Each of the eight pages at `/services/{slug}` renders from `src/content/services.ts` (page copy) and `src/content/service-guides.ts` (definition, decision table, trade-offs, FAQs) through `src/components/ServiceView.tsx`. Pages are about 1,200–1,700 words.
 
 1. **Hero** with breadcrumb, keyword-aligned H1, and a one-paragraph summary.
 2. **Overview**: the definition question as an H2 (for example "What does data engineering involve?"), a direct one-paragraph answer, a longer explanation, and links to related services.
@@ -49,13 +49,25 @@ Not done, on purpose:
 
 ### Homepage (`/`)
 1. What does Nodeblix do?
-2. Who are Nodeblix services for?
-3. Which technologies and platforms do you work with?
-4. How do the seven services fit together?
-5. How does an engagement start?
+2. What does "AI-first" mean in practice?
+3. Who are Nodeblix services for?
+4. Which technologies and platforms do you work with?
+5. How do the eight services fit together?
+6. How does an engagement start?
 
 ### Services index (`/services`)
-- "Which service fits your problem?" table, mapping seven buyer symptoms to the service that addresses each.
+- "Which service fits your problem?" table, mapping eight buyer symptoms to the service that addresses each.
+
+### AI engineering
+- What is AI engineering? *(overview)*
+- What is retrieval-augmented generation (RAG)?
+- When should we use RAG instead of fine-tuning?
+- How do you evaluate an LLM application?
+- Do we need AI agents?
+- How much does AI development cost? *(cost drivers only; no prices quoted)*
+- Is our data ready for AI?
+- How do you keep company data private when using AI models?
+- Which AI models and platforms do you work with?
 
 ### Cloud engineering
 - What does cloud engineering involve? *(overview)*
@@ -107,6 +119,7 @@ Not done, on purpose:
 - Is this the same as building dashboards?
 - Do you always recommend a lakehouse?
 - Can you work with data we cannot move off-premises?
+- How does data engineering support AI projects?
 
 ### Analytics / BI
 - What is an analytics platform? *(overview)*
@@ -127,10 +140,11 @@ Not done, on purpose:
 - Do you migrate historical data?
 - Will this include marketing campaigns?
 
-### Articles (two each)
+### Articles (two or three each)
 
 | Article | Questions |
 | --- | --- |
+| LLM features in production | How do you take an LLM prototype to production? · What is an LLM evaluation set? · Why do generative AI pilots fail to reach production? |
 | Cloud migration planning | What should a cloud migration plan include? · What are the biggest cloud migration risks? |
 | CI/CD pipeline design | What are CI/CD pipeline best practices? · Why should you build once and promote the artefact? |
 | Monolith vs microservices | Should I use a monolith or microservices? · When should you not use microservices? |

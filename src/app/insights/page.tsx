@@ -7,9 +7,9 @@ import { articles } from "@/content/articles";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "Engineering Insights: Cloud, DevOps, Data & CRM",
+  title: "Engineering Insights: AI, Cloud, DevOps & Data",
   description:
-    "Practical guides on cloud migration, CI/CD, microservices, data pipelines, warehouse vs lakehouse, BI dashboards, and CRM integration — written for technology leaders.",
+    "Practical guides on production AI, cloud migration, CI/CD, microservices, data pipelines, BI dashboards, and CRM integration — written for technology leaders.",
   path: "/insights",
 });
 

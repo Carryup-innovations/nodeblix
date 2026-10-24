@@ -78,6 +78,51 @@ export function ServiceMapDiagram() {
   );
 }
 
+export function AiSystemDiagram() {
+  return (
+    <div className="diagram" role="img" aria-label="AI service between applications and models, with retrieval, guardrails, tracing, and an evaluation gate">
+      <svg viewBox="0 0 840 340" fill="none">
+        <rect x="20" y="24" width="168" height="292" rx="4" stroke="#2a3b55" />
+        <text x="40" y="52" fill="#9fb0c7" fontSize="12">Applications</text>
+        <text x="40" y="92" fill="#e8eef7" fontSize="14">Product feature</text>
+        <text x="40" y="140" fill="#e8eef7" fontSize="14">Internal tool</text>
+        <text x="40" y="188" fill="#e8eef7" fontSize="14">Workflow step</text>
+        <text x="40" y="236" fill="#8ea0b7" fontSize="12">User identity</text>
+        <text x="40" y="256" fill="#8ea0b7" fontSize="12">passed with every call</text>
+        <path d="M188 108h24" stroke="#8ea0b7" />
+        <rect x="212" y="24" width="400" height="292" rx="4" stroke="#2a3b55" />
+        <text x="232" y="52" fill="#9fb0c7" fontSize="12">AI service</text>
+        {["Guardrails", "Retrieval", "Model", "Checks"].map((label, i) => (
+          <g key={label} transform={`translate(${232 + i * 92} 72)`}>
+            <rect width="80" height="72" rx="3" stroke={i === 2 ? "#246BFD" : "#3d516c"} />
+            <text x="10" y="42" fill="#e8eef7" fontSize="12">
+              {label}
+            </text>
+            {i < 3 && <path d="M82 36h8" stroke="#8ea0b7" />}
+          </g>
+        ))}
+        <rect x="232" y="164" width="172" height="64" rx="3" stroke="#3d516c" />
+        <text x="248" y="192" fill="#e8eef7" fontSize="13">Permissioned sources</text>
+        <text x="248" y="212" fill="#8ea0b7" fontSize="11">Docs · tickets · records</text>
+        <path d="M364 164v-20" stroke="#8ea0b7" />
+        <rect x="420" y="164" width="172" height="64" rx="3" stroke="#3d516c" />
+        <text x="436" y="192" fill="#e8eef7" fontSize="13">Replaceable model</text>
+        <text x="436" y="212" fill="#8ea0b7" fontSize="11">Hosted API or self-hosted</text>
+        <path d="M456 164v-20" stroke="#8ea0b7" />
+        <rect x="232" y="244" width="360" height="52" rx="3" stroke="#3d516c" />
+        <text x="248" y="276" fill="#e8eef7" fontSize="13">Tracing · prompt versions · cost per feature</text>
+        <rect x="636" y="24" width="184" height="292" rx="4" stroke="#2a3b55" />
+        <text x="656" y="52" fill="#9fb0c7" fontSize="12">Evaluation</text>
+        <text x="656" y="92" fill="#e8eef7" fontSize="14">Test set</text>
+        <text x="656" y="140" fill="#e8eef7" fontSize="14">Release gate in CI</text>
+        <text x="656" y="188" fill="#e8eef7" fontSize="14">Live monitoring</text>
+        <text x="656" y="236" fill="#e8eef7" fontSize="14">Feedback to tests</text>
+        <path d="M612 108h24" stroke="#246BFD" strokeDasharray="4 4" />
+      </svg>
+    </div>
+  );
+}
+
 export function DataFlowDiagram() {
   return (
     <div className="diagram" role="img" aria-label="Data moving from sources through transform and governance into analytics">

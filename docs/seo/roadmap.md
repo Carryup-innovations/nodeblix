@@ -55,7 +55,7 @@ Priorities run from top to bottom within each phase.
    - article dates;
    - the contact webhook;
    - the legal entity in Privacy and Terms.
-3. Request indexing for the homepage, `/services`, and the seven service pages.
+3. Request indexing for the homepage, `/services`, and the eight service pages.
 4. Record a baseline:
    - PageSpeed Insights;
    - Search Console coverage;
@@ -97,7 +97,7 @@ Priorities run from top to bottom within each phase.
    - Re-prioritise the remaining topics based on what Search Console shows people actually search for.
 
 **What success looks like at 90 days, without invented targets:**
-- All 36 or more URLs are indexed.
+- All 38 or more URLs are indexed.
 - Service pages are earning impressions for their primary and supporting terms.
 - At least one qualified enquiry can be attributed to an organic landing page.
 

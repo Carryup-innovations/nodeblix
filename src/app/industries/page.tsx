@@ -9,7 +9,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Industries: Technology Consulting by Sector",
   description:
-    "How cloud, software, data, and CRM work changes across financial services, retail, manufacturing, healthcare, logistics, and software companies.",
+    "How AI, cloud, software, data, and CRM work changes across financial services, retail, manufacturing, healthcare, logistics, and software companies.",
   path: "/industries",
 });
 

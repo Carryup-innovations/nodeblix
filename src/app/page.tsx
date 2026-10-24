@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Carousel } from "@/components/Carousel";
 import { ContactBlock } from "@/components/ContactBlock";
-import { CountUp } from "@/components/CountUp";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { ServiceExplorer } from "@/components/ServiceExplorer";
@@ -13,14 +12,19 @@ import { scenarios } from "@/content/work";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "Cloud, Software & Data Engineering Consultancy | Nodeblix",
+  title: "AI, Cloud & Data Engineering Consultancy | Nodeblix",
   absoluteTitle: true,
   description:
-    "Engineering-led consultancy for cloud, DevOps, custom software, microservices, data engineering, analytics, and CRM — systems your own team can run.",
+    "AI-first engineering consultancy for AI applications, cloud, DevOps, custom software, microservices, data, analytics, and CRM — systems your own team can run.",
   path: "/",
 });
 
 const entryPoints = [
+  {
+    href: "/services/ai-engineering",
+    title: "AI Engineering",
+    copy: "LLM apps, RAG, and agents measured before they ship.",
+  },
   {
     href: "/services/cloud-engineering",
     title: "Cloud & DevOps",
@@ -45,7 +49,7 @@ const pillars = [
     line: "New products and platforms, designed to be changed later.",
     image: "/images/pillar-build.jpg",
     alt: "Two architects sketching a system diagram on a glass whiteboard",
-    links: ["software-development", "microservices", "crm-solutions"],
+    links: ["ai-engineering", "software-development", "microservices"],
   },
   {
     n: "02",
@@ -53,7 +57,7 @@ const pillars = [
     line: "Move the estate forward without stopping the business that runs on it.",
     image: "/images/pillar-modernize.jpg",
     alt: "Engineer labelling fibre cables in a data centre aisle",
-    links: ["cloud-engineering", "data-engineering"],
+    links: ["cloud-engineering", "data-engineering", "crm-solutions"],
   },
   {
     n: "03",
@@ -65,11 +69,23 @@ const pillars = [
   },
 ];
 
-const facts = [
-  { n: 7, label: "Service lines", copy: "Cloud, DevOps, software, microservices, data, analytics, and CRM." },
-  { n: 6, label: "Industries", copy: "Sector constraints documented as they actually show up." },
-  { n: 5, label: "Movements", copy: "A delivery method you can inspect before code is written." },
-  { n: 1, label: "Accountable team", copy: "From discovery through an operable handover." },
+const aiPoints = [
+  [
+    "Grounded in your data",
+    "Answers come from permissioned company sources and cite them, so people can check the work.",
+  ],
+  [
+    "Measured before release",
+    "Every prompt, model, or retrieval change is scored against real test cases before it ships.",
+  ],
+  [
+    "Controlled in operation",
+    "Guardrails, human approval for consequential actions, and a trace of every request.",
+  ],
+  [
+    "Built to be swapped",
+    "The model is a component. Changing provider is a test run, not a rewrite.",
+  ],
 ];
 
 const steps = [
@@ -83,7 +99,11 @@ const steps = [
 const homeFaqs = [
   {
     q: "What does Nodeblix do?",
-    a: "Nodeblix is a technology engineering and consulting company. We design, build, modernize, and help operate cloud infrastructure, CI/CD and DevOps practices, custom software, microservices architectures, data platforms, analytics and business intelligence, and CRM systems.",
+    a: "Nodeblix is an AI-first technology engineering and consulting company. We design, build, modernize, and help operate AI applications — LLM features, retrieval over company knowledge, and AI agents — together with the cloud infrastructure, CI/CD and DevOps practices, custom software, microservices architectures, data platforms, analytics, and CRM systems they depend on.",
+  },
+  {
+    q: "What does “AI-first” mean in practice?",
+    a: "It means we consider where AI can genuinely improve a workflow at the start of every engagement, and engineer it with the same discipline as any other production system: grounded in reliable data, tested against real cases, monitored, and owned. It does not mean adding a model where a simpler rule or report would do the job.",
   },
   {
     q: "Who are Nodeblix services for?",
@@ -91,11 +111,11 @@ const homeFaqs = [
   },
   {
     q: "Which technologies and platforms do you work with?",
-    a: "We design for the major cloud providers — AWS, Microsoft Azure, and Google Cloud — and implement common CRM platforms such as Salesforce, HubSpot, and Microsoft Dynamics 365. For languages, data tools, and BI platforms, we start from what your team already runs and can hire for, rather than introducing a stack for its own sake.",
+    a: "We design for the major cloud providers — AWS, Microsoft Azure, and Google Cloud — and implement common CRM platforms such as Salesforce, HubSpot, and Microsoft Dynamics 365. For AI features, we choose per use case between commercial model APIs, the managed model services on those clouds, and open-weight models you can host yourself. For languages, data tools, and BI platforms, we start from what your team already runs and can hire for, rather than introducing a stack for its own sake.",
   },
   {
-    q: "How do the seven services fit together?",
-    a: "Cloud engineering provides the platform, and DevOps engineering is how change reaches it. Software development and microservices architecture shape the applications. Data engineering makes information reliable, analytical platforms turn it into decisions, and CRM solutions connect it to customers. Most engagements start with one service and touch two or three.",
+    q: "How do the eight services fit together?",
+    a: "AI engineering builds models into products and workflows, and depends on everything beneath it. Cloud engineering provides the platform, and DevOps engineering is how change reaches it. Software development and microservices architecture shape the applications. Data engineering makes information reliable, analytical platforms turn it into decisions, and CRM solutions connect it to customers. Most engagements start with one service and touch two or three.",
   },
   {
     q: "How does an engagement start?",
@@ -118,11 +138,12 @@ export default function HomePage() {
     <main id="main">
       <PageHero
         size="home"
-        image="/images/hero-skyline.jpg"
-        alt="Two engineers looking out over a city skyline at dusk from a high office floor"
-        kicker="Engineering-led technology partner"
-        title="Build the technology your business will depend on."
-        lede="Cloud, software, data, and business systems — designed, delivered, and operated to stay reliable as the organisation grows."
+        image="/images/hero-ai.jpg"
+        alt="Two engineers reviewing an AI model, its evaluation charts, and a data pipeline on a large display in a high-rise studio at night"
+        quality={90}
+        kicker="AI-first engineering partner"
+        title="AI and technology your business can depend on."
+        lede="AI applications, cloud, software, and data — designed, delivered, and operated to stay reliable as the organisation grows."
       >
         <div className="btn-row">
           <Link className="btn btn-lg" href="/contact">
@@ -159,14 +180,15 @@ export default function HomePage() {
               </h2>
               <div className="statement-side">
                 <p>
-                  Nodeblix is a technology engineering and consulting company. We design, build,
-                  modernize, and help operate cloud platforms, delivery pipelines, custom software,
-                  data platforms, analytics, and CRM systems.
+                  Nodeblix is an AI-first technology engineering and consulting company. We design,
+                  build, modernize, and help operate AI applications, cloud platforms, delivery
+                  pipelines, custom software, data platforms, analytics, and CRM systems.
                 </p>
                 <p className="muted">
                   Most technology programmes stall for unmysterious reasons: unclear ownership,
                   fashionable architecture, data nobody trusts, and a handover that never quite
-                  happens. We are organised around those failure modes.
+                  happens. AI raises the stakes on all four. We are organised around those failure
+                  modes.
                 </p>
                 <Link href="/about" className="text-link">
                   About Nodeblix
@@ -177,18 +199,47 @@ export default function HomePage() {
               </div>
             </div>
           </Reveal>
-          <div className="facts">
-            {facts.map((f, i) => (
-              <Reveal key={f.label} delay={i * 90}>
-                <div className="fact">
-                  <span className="fact-n">
-                    <CountUp to={f.n} />
-                  </span>
-                  <strong>{f.label}</strong>
-                  <p className="muted">{f.copy}</p>
+        </div>
+      </section>
+
+      <section className="section section-navy" aria-labelledby="home-ai">
+        <div className="wrap">
+          <Reveal>
+            <div className="section-head">
+              <div>
+                <p className="kicker">AI engineering</p>
+                <h2 id="home-ai">AI that earns its place in production.</h2>
+              </div>
+              <p className="lede">
+                Language models, retrieval over company knowledge, and agents that act inside
+                clear limits — engineered on the same data, cloud, and delivery foundations we
+                build for everything else.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal>
+            <div
+              className="ai-points m-rail"
+              role="region"
+              aria-label="How we engineer AI"
+              tabIndex={0}
+            >
+              {aiPoints.map(([title, body], i) => (
+                <div key={title} className="ai-point">
+                  <span className="ai-point-n">{String(i + 1).padStart(2, "0")}</span>
+                  <strong>{title}</strong>
+                  <p>{body}</p>
                 </div>
-              </Reveal>
-            ))}
+              ))}
+            </div>
+          </Reveal>
+          <div className="btn-row ai-actions">
+            <Link className="btn" href="/services/ai-engineering">
+              Explore AI engineering
+            </Link>
+            <Link className="btn-ghost btn-ghost-on-dark" href="/insights/llm-features-in-production">
+              From demo to production
+            </Link>
           </div>
         </div>
       </section>
@@ -207,7 +258,7 @@ export default function HomePage() {
               </p>
             </div>
           </Reveal>
-          <div className="pillars">
+          <div className="pillars m-rail">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={i * 110}>
                 <article className="pillar">
@@ -237,7 +288,7 @@ export default function HomePage() {
             <div className="section-head">
               <div>
                 <p className="kicker">Services</p>
-                <h2>Seven capabilities, one operating estate.</h2>
+                <h2>Eight capabilities, one operating estate.</h2>
               </div>
               <p className="lede">
                 Each service has its own failure modes. The useful work is knowing which one is
@@ -265,7 +316,7 @@ export default function HomePage() {
               </p>
             </div>
           </Reveal>
-          <div className="industry-grid">
+          <div className="industry-grid m-rail">
             {industries.map((item, i) => (
               <Reveal key={item.slug} delay={(i % 3) * 90}>
                 <Link href={`/industries/${item.slug}`} className="industry-tile">
@@ -373,8 +424,8 @@ export default function HomePage() {
                 <h2>Notes from the work.</h2>
               </div>
               <p className="lede">
-                Practical writing on migration, delivery, architecture, and data — for people who
-                have to live with the system.
+                Practical writing on AI, migration, delivery, architecture, and data — for people
+                who have to live with the system.
               </p>
             </div>
           </Reveal>

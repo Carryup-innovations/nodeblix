@@ -6,7 +6,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { articles, getArticle } from "@/content/articles";
-import { getServicesBySlugs } from "@/content/services";
+import { getServicesBySlugs, inSentence } from "@/content/services";
 import { articleSchema, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 
@@ -111,7 +111,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <p className="article-service">
                   This article supports our{" "}
                   <Link href={`/services/${primaryService.slug}`}>
-                    {primaryService.name.toLowerCase()} services
+                    {inSentence(primaryService.name)} services
                   </Link>
                   . If the situation it describes is familiar,{" "}
                   <Link href="/contact">tell us about the systems involved</Link>.

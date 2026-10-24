@@ -55,13 +55,17 @@ export const industries: Industry[] = [
         title: "Certified financial metrics",
         body: "A small set of numbers with owners, used in both operational dashboards and statutory reporting prep.",
       },
+      {
+        title: "Cited document and case assistance",
+        body: "Models that extract and summarise from applications, statements, and case notes — citing their sources, leaving decisions to people, and logging every output for review.",
+      },
     ],
     considerations: [
       "Residency, encryption, and key ownership should be decided before the first production account.",
       "Disaster recovery is a rehearsal schedule, not a diagram in a board pack.",
       "Vendor SaaS still needs an integration and exit plan.",
     ],
-    relatedServices: ["cloud-engineering", "data-engineering", "software-development"],
+    relatedServices: ["cloud-engineering", "data-engineering", "software-development", "ai-engineering"],
   },
   {
     slug: "retail-and-commerce",
@@ -103,13 +107,17 @@ export const industries: Industry[] = [
         title: "Commerce analytics with operational grain",
         body: "Fill rate, promise accuracy, and contribution by channel — not only last-click revenue.",
       },
+      {
+        title: "Search and product content grounded in the catalogue",
+        body: "Generated descriptions and conversational search that draw only on catalogue, pricing, and inventory data, so an assistant never recommends what cannot be shipped.",
+      },
     ],
     considerations: [
       "Marketplace and POS vendors constrain what you can own. Design around those edges early.",
       "Returns and partial fulfilment are not edge cases in this sector.",
       "Personal data from commerce and CRM should share an identity strategy.",
     ],
-    relatedServices: ["microservices", "data-engineering", "analytical-platforms", "crm-solutions"],
+    relatedServices: ["data-engineering", "microservices", "crm-solutions", "ai-engineering"],
   },
   {
     slug: "manufacturing",
@@ -155,13 +163,17 @@ export const industries: Industry[] = [
         title: "CRM connected to the ERP",
         body: "Quotes, orders, and dealer or distributor accounts in a CRM that reads availability and order status from the ERP instead of re-keying it.",
       },
+      {
+        title: "Maintenance knowledge at the line",
+        body: "Retrieval over manuals, work orders, and shift notes, so technicians get cited answers with the source document one step away.",
+      },
     ],
     considerations: [
       "Downtime windows are scarce. Change is sequenced around production, not the other way around.",
       "Safety and quality systems are out of scope unless explicitly commissioned by specialists.",
       "Supplier portals often matter as much as internal MES.",
     ],
-    relatedServices: ["data-engineering", "crm-solutions", "software-development", "analytical-platforms"],
+    relatedServices: ["data-engineering", "software-development", "crm-solutions", "ai-engineering"],
   },
   {
     slug: "healthcare-and-life-sciences",
@@ -203,13 +215,17 @@ export const industries: Industry[] = [
         title: "Analytics that never become a second care record",
         body: "Warehouses hold approved extracts. They are not a back door around the system of record.",
       },
+      {
+        title: "Administrative AI kept apart from clinical judgement",
+        body: "Summarisation and document intake for administrative workflows, with sensitive fields masked, access enforced at retrieval, and clinical decisions left with clinicians.",
+      },
     ],
     considerations: [
       "Local regulation varies. Counsel and compliance owners stay in the loop.",
       "We do not implement clinical decision support unless a qualified programme exists.",
       "Vendor EHRs constrain architecture more than a greenfield diagram admits.",
     ],
-    relatedServices: ["data-engineering", "cloud-engineering", "software-development"],
+    relatedServices: ["data-engineering", "cloud-engineering", "software-development", "ai-engineering"],
   },
   {
     slug: "logistics-and-supply-chain",
@@ -251,13 +267,17 @@ export const industries: Industry[] = [
         title: "Operational analytics with exception lists",
         body: "What is late, what is unclaimed, what is burning cost — not a map that only looks good in a demo.",
       },
+      {
+        title: "Exception triage with a human in the loop",
+        body: "Models that read carrier messages and shipment events, classify the exception, and draft the next action for a coordinator to approve.",
+      },
     ],
     considerations: [
       "Time zones, units, and location codes are data-quality work, not polish.",
       "Peak season is a load test the physical world will run whether you scheduled it or not.",
       "Customer promise dates belong in the same model as carrier events.",
     ],
-    relatedServices: ["data-engineering", "microservices", "analytical-platforms"],
+    relatedServices: ["data-engineering", "microservices", "analytical-platforms", "ai-engineering"],
   },
   {
     slug: "software-and-technology",
@@ -299,13 +319,17 @@ export const industries: Industry[] = [
         title: "Tenant-aware operations",
         body: "Observability and support tools that can answer “which customer is hurting?” without a production query.",
       },
+      {
+        title: "AI features behind release gates",
+        body: "LLM features in the product treated like any other code path: evaluation in CI, per-tenant data boundaries, and model usage metered per customer.",
+      },
     ],
     considerations: [
       "We expect to work in your repositories and on your cadence.",
       "We will not quietly replace your architects. The goal is a stronger internal team.",
       "Roadmap features stay yours; we take the systems that make those features shippable.",
     ],
-    relatedServices: ["devops-engineering", "cloud-engineering", "microservices", "software-development"],
+    relatedServices: ["devops-engineering", "cloud-engineering", "microservices", "ai-engineering"],
   },
 ];
 

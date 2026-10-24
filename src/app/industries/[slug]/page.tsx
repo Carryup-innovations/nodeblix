@@ -69,7 +69,12 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         <div className="wrap">
           <p className="kicker">Patterns</p>
           <h2 style={{ margin: "12px 0 36px" }}>Solution patterns we discuss</h2>
-          <div className="tile-grid">
+          <div
+            className={`tile-grid m-rail${item.patterns.length === 4 ? " tile-grid-2" : ""}`}
+            role="region"
+            aria-label="Solution patterns"
+            tabIndex={0}
+          >
             {item.patterns.map((c, i) => (
               <Reveal key={c.title} delay={i * 80}>
                 <article className="tile">
@@ -95,7 +100,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
           <p className="kicker">Services</p>
           <h2 style={{ margin: "12px 0 36px" }}>Related services</h2>
           <CardGrid
-            items={related.map((s) => ({
+            items={related.map((s, i) => ({
               href: `/services/${s.slug}`,
               image: s.image,
               alt: s.imageAlt,
@@ -103,6 +108,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
               title: s.name,
               copy: s.short,
               more: "Explore the service",
+              wide: i === 0 && related.length === 4,
             }))}
           />
         </div>

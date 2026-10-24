@@ -40,14 +40,14 @@ The eleven items from the brief, in order.
    - `https://nodeblix.com/robots.txt` must show `Allow: /`, `Disallow: /api/`, and the sitemap line.
    - It must **not** show `Disallow: /`.
    - No page should have a `noindex` robots meta tag.
-5. **Submit the XML sitemap** in Search Console (Sitemaps → `https://nodeblix.com/sitemap.xml`). Expect 36 URLs.
+5. **Submit the XML sitemap** in Search Console (Sitemaps → `https://nodeblix.com/sitemap.xml`). Expect 38 URLs.
 6. **Verify domain ownership in Search Console.**
    - Prefer a Domain property verified by DNS TXT record.
    - Otherwise, use a URL-prefix property with the HTML tag: set `GOOGLE_SITE_VERIFICATION` and redeploy.
 7. **Inspect URL indexing and rendering.** Use URL Inspection → Test live URL on these pages, then Request indexing:
    - the homepage;
    - `/services`;
-   - each of the seven service pages.
+   - each of the eight service pages.
 
    Check that the rendered HTML includes the FAQ answers and tables.
 8. **Test structured data on the live site.**

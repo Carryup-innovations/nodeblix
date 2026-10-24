@@ -6,10 +6,10 @@ import { Reveal } from "@/components/Reveal";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
-  title: "About Nodeblix | Engineering-Led Technology Consultancy",
+  title: "About Nodeblix | AI-First Engineering Consultancy",
   absoluteTitle: true,
   description:
-    "Nodeblix is an engineering-led technology consultancy for cloud, DevOps, software, data, analytics, and CRM — focused on systems your own team can run after launch.",
+    "Nodeblix is an AI-first, engineering-led consultancy for AI, cloud, DevOps, software, data, analytics, and CRM — building systems your own team can run.",
   path: "/about",
 });
 
@@ -55,6 +55,12 @@ export default function AboutPage() {
               architecture you can explain, delivery you can inspect, and software that does not
               become a second problem.
             </p>
+            <p style={{ marginTop: 16 }}>
+              We are AI-first in a practical sense: in every engagement we look for where a model can
+              genuinely improve a workflow, then engineer it with the same discipline as the rest of
+              the system. Software engineering, AI, and data are one piece of work, not three
+              separate experiments.
+            </p>
             <p className="muted" style={{ marginTop: 16 }}>
               We do not publish years in market, headcount, awards, or office maps until those facts
               are verified. The absence of a timeline here is deliberate.
@@ -73,7 +79,7 @@ export default function AboutPage() {
         <div className="wrap">
           <p className="kicker">Principles</p>
           <h2 style={{ margin: "12px 0 36px" }}>What guides technical decisions</h2>
-          <div className="tile-grid tile-grid-2">
+          <div className="tile-grid tile-grid-2 m-rail" role="region" aria-label="Principles" tabIndex={0}>
             {principles.map(([t, d], i) => (
               <Reveal key={t} delay={(i % 2) * 90}>
                 <article className="tile">

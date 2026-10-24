@@ -3,17 +3,22 @@ import { CardGrid } from "@/components/CardGrid";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { services } from "@/content/services";
+import { inSentence, services } from "@/content/services";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta({
   title: "Technology Engineering & Consulting Services",
   description:
-    "Cloud engineering, DevOps and CI/CD, custom software, microservices, data engineering, BI and analytics, and CRM implementation — and how they fit together.",
+    "AI development, cloud, DevOps and CI/CD, custom software, microservices, data engineering, BI, and CRM implementation — and how the services fit together.",
   path: "/services",
 });
 
 const fit = [
+  {
+    problem: "An AI pilot works in a demo but is not trusted, measured, or connected to company data.",
+    slug: "ai-engineering",
+    anchor: "AI development and integration",
+  },
   {
     problem: "Infrastructure is hard to change, expensive, or fragile — or a migration is due.",
     slug: "cloud-engineering",
@@ -60,7 +65,7 @@ export default function ServicesPage() {
         crumbs={[{ href: "/", label: "Home" }, { label: "Services" }]}
         kicker="Services"
         title="Technology engineering and consulting services"
-        lede="Seven services across cloud, delivery, software, data, analytics, and CRM. Each has its own problems, methods, and failure modes — the useful work is knowing which one is actually blocking the business, and which adjacent systems will have to move with it."
+        lede="Eight services across AI, cloud, delivery, software, data, analytics, and CRM. Each has its own problems, methods, and failure modes — the useful work is knowing which one is actually blocking the business, and which adjacent systems will have to move with it."
       />
       <section className="section">
         <div className="wrap">
@@ -84,8 +89,8 @@ export default function ServicesPage() {
               tag: String(i + 1).padStart(2, "0"),
               title: s.name,
               copy: s.short,
-              more: `Explore ${s.name.toLowerCase()}`,
-              wide: i === 0 || i === services.length - 1,
+              more: `Explore ${inSentence(s.name)}`,
+              wide: i === 0,
             }))}
           />
         </div>

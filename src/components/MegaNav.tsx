@@ -93,7 +93,7 @@ export function MegaNav({ menu }: { menu: MenuData }) {
   }, [closeAll]);
 
   useEffect(() => {
-    document.body.style.overflow = mobile ? "hidden" : "";
+    document.documentElement.style.overflow = mobile ? "hidden" : "";
   }, [mobile]);
 
   const trigger = (p: Panel, label: string) => (
@@ -160,9 +160,9 @@ export function MegaNav({ menu }: { menu: MenuData }) {
           <div className="wrap mega-grid mega-grid-services">
             <div className="mega-intro">
               <p className="kicker">Services</p>
-              <p className="mega-title">Seven capabilities, one operating estate.</p>
+              <p className="mega-title">Eight capabilities, one operating estate.</p>
               <p className="muted">
-                Cloud, software, data, and business systems designed to work together.
+                AI, cloud, software, data, and business systems designed to work together.
               </p>
               <Link href="/services" className="text-link" onClick={closeAll}>
                 All services <Arrow />

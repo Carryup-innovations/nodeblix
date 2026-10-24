@@ -41,4 +41,4 @@ Full detail is in `docs/seo/`. Start with `docs/seo/README.md`.
 
 ## Page inventory
 
-Home, Services + 7 service pages, Industries + 6 industry pages, Work + 3 illustrative scenarios, Insights + 10 articles, About, Approach, Contact, Privacy, Terms, custom 404.
+Home, Services + 8 service pages, Industries + 6 industry pages, Work + 3 illustrative scenarios, Insights + 11 articles, About, Approach, Contact, Privacy, Terms, custom 404.

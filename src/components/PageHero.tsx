@@ -13,6 +13,7 @@ export function PageHero({
   crumbs,
   children,
   size = "page",
+  quality,
 }: {
   image: string;
   alt: string;
@@ -22,11 +23,12 @@ export function PageHero({
   crumbs?: Crumb[];
   children?: ReactNode;
   size?: "home" | "page";
+  quality?: 75 | 90;
 }) {
   return (
     <section className={`page-hero page-hero-${size}`}>
       <div className="page-hero-media">
-        <Image src={image} alt={alt} fill loading="eager" fetchPriority="high" sizes="100vw" />
+        <Image src={image} alt={alt} fill loading="eager" fetchPriority="high" sizes="100vw" quality={quality} />
       </div>
       <div className="wrap page-hero-inner">
         {crumbs && <Crumbs items={crumbs} />}

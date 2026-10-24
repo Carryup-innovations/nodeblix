@@ -28,6 +28,117 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "ai-engineering",
+    name: "AI Engineering",
+    navLabel: "AI Engineering",
+    short:
+      "LLM applications, retrieval over your own knowledge, AI agents, and the evaluation and MLOps that keep them dependable after launch.",
+    h1: "AI engineering that holds up in production",
+    lede:
+      "A convincing demo takes a week. A feature people can rely on takes evaluation, grounded data, cost controls, and an owner. We build generative AI into real products and workflows, and we measure whether it works before it reaches your customers.",
+    title: "AI Development & Generative AI Integration Services",
+    serviceType: "AI development and generative AI integration",
+    description:
+      "AI development and integration services: LLM apps, RAG over your own data, AI agents, evaluation, guardrails, and MLOps that keep AI reliable in production.",
+    image: "/images/ai-engineering.jpg",
+    imageAlt:
+      "Engineer at dusk reviewing an AI evaluation dashboard with test results and a retrieval pipeline diagram",
+    problemsTitle: "Where AI initiatives usually stall",
+    problems: [
+      {
+        title: "A pilot that never became a product",
+        body: "The prototype impressed a steering group. Nobody defined what good output looks like, so nobody can say whether it is ready.",
+      },
+      {
+        title: "Answers that sound right and are not",
+        body: "The model has no access to current, permissioned company knowledge, so it fills gaps with plausible guesses.",
+      },
+      {
+        title: "Costs and risk that arrive after launch",
+        body: "Token spend grows with usage, prompts leak data they should not, and there is no log to explain a bad answer.",
+      },
+    ],
+    capabilities: [
+      {
+        title: "LLM application development",
+        body: "Assistants, summarisation, extraction, and classification built into the tools your teams already use — with interfaces that show sources and admit uncertainty.",
+      },
+      {
+        title: "Retrieval-augmented generation (RAG)",
+        body: "Search over documents, tickets, and records with chunking, ranking, and access control designed for your content, so answers cite what they used.",
+      },
+      {
+        title: "AI agents and workflow automation",
+        body: "Multi-step agents that call your APIs inside clear limits: approved tools, human sign-off where it matters, and a full trace of every action.",
+      },
+      {
+        title: "Evaluation and guardrails",
+        body: "Test sets drawn from real cases, automated scoring, red-team checks, and release gates, so a prompt or model change is measured before it ships.",
+      },
+      {
+        title: "MLOps and LLMOps",
+        body: "Versioned prompts, models, and datasets; monitoring for quality, latency, and cost; and a rollback path that works like any other deployment.",
+      },
+      {
+        title: "AI-ready data foundations",
+        body: "Clean, governed, well-described data that retrieval and models can use — built with our data engineering practice rather than around it.",
+      },
+    ],
+    approachTitle: "How we take AI from demo to dependable",
+    approach: [
+      "Pick one workflow where a better answer or a faster step has a measurable value — not a general “AI strategy”.",
+      "Write down what a good output is, with examples, before choosing a model or a framework.",
+      "Start with the simplest design that can pass: a well-structured prompt, then retrieval, and agents only when the task needs them.",
+      "Build the evaluation set and the logging first, so every change is compared against the last one.",
+      "Release to a small group, watch quality and cost on real traffic, then widen access.",
+    ],
+    architecture:
+      "A typical build places a thin AI service between your applications and the model provider. It handles retrieval from permissioned sources, prompt and model versions, guardrails on input and output, and tracing of every request. Evaluation runs in CI against a fixed test set. The model is a replaceable component, so switching provider or moving to a self-hosted model is a configuration and testing exercise, not a rewrite.",
+    useCases: [
+      {
+        title: "Internal knowledge assistant",
+        body: "Staff spend too long searching policies, runbooks, and past tickets. A cited assistant answers from approved sources only.",
+      },
+      {
+        title: "Document intake and extraction",
+        body: "Forms, contracts, or claims arrive as PDFs and email. Models extract and validate fields, and people review the uncertain cases.",
+      },
+      {
+        title: "Support and operations copilots",
+        body: "Agents draft replies, summarise case history, and propose next actions — while a person stays accountable for the outcome.",
+      },
+    ],
+    integration: [
+      "Hosted model APIs or self-hosted open-weight models",
+      "Document stores, wikis, ticketing, and CRM records used as knowledge sources",
+      "Identity and permissions, so retrieval respects who is asking",
+      "Existing CI/CD, observability, and data platforms",
+    ],
+    operations: [
+      {
+        title: "Quality",
+        body: "Every release is scored against the same evaluation set. Regressions block the deploy, just as failing tests would.",
+      },
+      {
+        title: "Security and privacy",
+        body: "Sensitive data is filtered or masked before it reaches a model, and retention terms with providers are checked, not assumed.",
+      },
+      {
+        title: "Cost",
+        body: "Usage is metered per feature. Caching, smaller models, and shorter context are used where the evaluation shows quality holds.",
+      },
+    ],
+    method: [
+      { title: "Frame", body: "One workflow, its users, the value of a better outcome, and the risks of a wrong one." },
+      { title: "Define", body: "Examples of good and bad output, the evaluation set, and the data the feature may use." },
+      { title: "Prototype", body: "The simplest design scored against the evaluation set — in days, not months." },
+      { title: "Harden", body: "Retrieval, guardrails, tracing, cost controls, and the release gate." },
+      { title: "Operate", body: "Monitored rollout, feedback captured into the test set, and a clear owner." },
+    ],
+    related: ["data-engineering", "software-development", "devops-engineering"],
+    relatedInsights: ["llm-features-in-production", "data-pipeline-reliability"],
+  },
+  {
     slug: "cloud-engineering",
     name: "Cloud Engineering",
     navLabel: "Cloud Engineering",
@@ -81,7 +192,7 @@ export const services: Service[] = [
       },
       {
         title: "Performance and cost",
-        body: "Right-sizing, storage lifecycle, reserved capacity where it is justified, and tagging that makes owners visible.",
+        body: "Right-sizing, storage lifecycle, reserved capacity where it is justified, GPU or managed model capacity for AI workloads sized from measured demand, and tagging that makes owners visible.",
       },
     ],
     approachTitle: "How we treat a cloud programme",
@@ -183,7 +294,7 @@ export const services: Service[] = [
       },
       {
         title: "Deployment strategy",
-        body: "Blue/green, canary, or rolling releases with rollback that has been rehearsed.",
+        body: "Blue/green, canary, or rolling releases with rollback that has been rehearsed — including model and prompt changes for AI features.",
       },
       {
         title: "Observability",
@@ -289,7 +400,7 @@ export const services: Service[] = [
       },
       {
         title: "Internal tools and portals",
-        body: "Software for the people who run the company: operations, finance, support, and partners.",
+        body: "Software for the people who run the company: operations, finance, support, and partners — with AI assistance where it removes real effort.",
       },
       {
         title: "Application modernization",
@@ -354,7 +465,7 @@ export const services: Service[] = [
       { title: "Prove", body: "Tests, accessibility, and operational checks before wider use." },
       { title: "Hand over", body: "Runbooks, backlog, and pairing so the product is not a black box." },
     ],
-    related: ["microservices", "devops-engineering", "crm-solutions"],
+    related: ["microservices", "devops-engineering", "ai-engineering"],
     relatedInsights: ["modernizing-legacy-applications", "monolith-versus-microservices"],
   },
   {
@@ -518,7 +629,7 @@ export const services: Service[] = [
       },
       {
         title: "Foundations for analytics and AI",
-        body: "Reliable features and tables first. Models on top of a swamp do not become more accurate with a better algorithm.",
+        body: "Reliable features and tables first. Models on top of a swamp do not become more accurate with a better algorithm, and retrieval-based AI needs documented, permissioned sources just as much.",
       },
     ],
     approachTitle: "Start from the decisions that matter",
@@ -571,7 +682,7 @@ export const services: Service[] = [
       { title: "Publish", body: "Certified tables and a path into analytics tools." },
       { title: "Run", body: "Orchestration, on-call, and a backlog for the next domains." },
     ],
-    related: ["analytical-platforms", "cloud-engineering", "crm-solutions"],
+    related: ["analytical-platforms", "ai-engineering", "cloud-engineering"],
     relatedInsights: ["data-pipeline-reliability", "warehouse-versus-lakehouse"],
   },
   {
@@ -611,7 +722,7 @@ export const services: Service[] = [
       },
       {
         title: "Semantic models",
-        body: "Relationships and calculations that self-service tools can use without reinventing joins.",
+        body: "Relationships and calculations that self-service tools — and AI assistants answering metric questions — can use without reinventing joins or definitions.",
       },
       {
         title: "Executive and operational views",
@@ -724,7 +835,7 @@ export const services: Service[] = [
       },
       {
         title: "Workflow and automation",
-        body: "Assignments, reminders, and handoffs that remove typing, not judgment.",
+        body: "Assignments, reminders, handoffs, and AI-drafted summaries where they remove typing, not judgment.",
       },
       {
         title: "Data migration",
@@ -794,6 +905,11 @@ export const services: Service[] = [
     relatedInsights: ["crm-integration-migration", "useful-bi-dashboards"],
   },
 ];
+
+/** Lowercases a name for mid-sentence use, keeping acronyms and mixed-case words (AI, CRM, B2B, DevOps). */
+export function inSentence(name: string) {
+  return name.replace(/\S+/g, (word) => (/^.+[A-Z]/.test(word) ? word : word.toLowerCase()));
+}
 
 export function getService(slug: string) {
   return services.find((s) => s.slug === slug);

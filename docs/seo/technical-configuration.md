@@ -25,7 +25,7 @@ All are optional. With none set, the site builds as the indexable production sit
 ## Crawling and indexing
 
 - `src/app/robots.ts`: allow `/`, disallow `/api/`, reference the sitemap. In noindex mode it emits `Disallow: /`.
-- `src/app/sitemap.ts`: 36 URLs covering home, 8 top-level pages, 7 services, 6 industries, 3 scenarios, the insights hub and 10 articles. `lastmod` uses `contentUpdated` in `src/lib/site.ts`, or `updated`/`date` for articles. **Bump `contentUpdated` when page copy changes**, rather than using build time, so `lastmod` stays truthful.
+- `src/app/sitemap.ts`: 38 URLs covering home, 8 top-level pages, 8 services, 6 industries, 3 scenarios, the insights hub and 11 articles. `lastmod` uses `contentUpdated` in `src/lib/site.ts`, or `updated`/`date` for articles. **Bump `contentUpdated` when page copy changes**, rather than using build time, so `lastmod` stays truthful.
 - **Redirects** (`next.config.ts`): `www.nodeblix.com/*` → `https://nodeblix.com/*` (308), and trailing-slash URLs → no slash (308, Next.js default). HTTP → HTTPS must be enforced by the host.
 - **404**: unknown paths, and unknown slugs under dynamic routes, return HTTP 404 with the custom not-found page.
 - `X-Powered-By` is disabled. Images are served as AVIF, falling back to WebP.
@@ -66,7 +66,7 @@ Steps that need account access:
 | --- | --- |
 | `npm run build` | 80 static outputs, no errors |
 | `tsc --noEmit`, `npm run lint` | Clean |
-| `npm run seo:check` (36 sitemap URLs, every internal link, 404 probe) | **0 errors.** 1 warning: `/terms` is linked only from the footer, which is acceptable for a legal page. |
+| `npm run seo:check` (38 sitemap URLs, every internal link, 404 probe) | **0 errors.** 1 warning: `/terms` is linked only from the footer, which is acceptable for a legal page. |
 | Canonical = sitemap URL on every page, host `https://nodeblix.com` | Pass |
 | One H1 per page, no skipped heading levels | Pass |
 | Title ≤ 65 characters, description 70–170 characters, all unique | Pass |

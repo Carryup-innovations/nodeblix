@@ -7,7 +7,7 @@ export const contentType = "image/png";
 export default function Image() {
   return renderOg({
     kicker: "About Nodeblix",
-    title: "An engineering-led technology partner",
+    title: "An AI-first, engineering-led technology partner",
     image: "/images/about-campus.jpg",
   });
 }

@@ -24,6 +24,12 @@ export function organization() {
       height: 512,
     },
     knowsAbout: [
+      "AI engineering",
+      "Generative AI application development",
+      "Retrieval-augmented generation",
+      "AI agents",
+      "LLM evaluation",
+      "MLOps",
       "Cloud engineering",
       "Cloud migration",
       "DevOps",

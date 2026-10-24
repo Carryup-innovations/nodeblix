@@ -16,7 +16,7 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL || productionUrl).replace(/\/$/, ""),
   tagline: "Technology built for what comes next.",
   description:
-    "Nodeblix is a technology engineering and consulting company. We design, build, and modernize cloud infrastructure, software, data platforms, analytics, and CRM systems for organisations that depend on them.",
+    "Nodeblix is an AI-first technology engineering and consulting company. We design, build, and modernize AI applications, cloud infrastructure, software, data platforms, analytics, and CRM systems for organisations that depend on them.",
   email: null as string | null,
   phone: null as string | null,
   address: null as string | null,
@@ -33,6 +33,7 @@ export const nav = [
 ] as const;
 
 export const serviceLinks = [
+  { href: "/services/ai-engineering", label: "AI Engineering" },
   { href: "/services/cloud-engineering", label: "Cloud Engineering" },
   { href: "/services/devops-engineering", label: "DevOps Engineering" },
   { href: "/services/software-development", label: "Software Development" },
@@ -43,6 +44,7 @@ export const serviceLinks = [
 ] as const;
 
 export const interests = [
+  "AI Engineering",
   "Cloud Engineering",
   "DevOps Engineering",
   "Software Development",

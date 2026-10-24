@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const metadata = pageMeta({
   title: "Contact Us: Discuss a Technology Project",
   description:
-    "Tell us about a cloud, DevOps, software, data, analytics, or CRM project — the systems and constraints involved — and we will suggest a useful first step.",
+    "Tell us about an AI, cloud, DevOps, software, data, analytics, or CRM project — the systems and constraints involved — and we will suggest a useful first step.",
   path: "/contact",
 });
 

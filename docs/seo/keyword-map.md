@@ -12,8 +12,9 @@ Rules applied:
 
 | URL | Search intent | Primary keyword | Supporting terms (covered in sections or FAQs) | Title tag | Priority |
 | --- | --- | --- | --- | --- | --- |
-| `/` | Navigational / commercial | technology engineering consultancy (brand + category) | cloud, software and data engineering consultancy; what Nodeblix does | Cloud, Software & Data Engineering Consultancy \| Nodeblix | High |
+| `/` | Navigational / commercial | AI, cloud and data engineering consultancy (brand + category) | AI-first engineering consultancy; what Nodeblix does; what "AI-first" means | AI, Cloud & Data Engineering Consultancy \| Nodeblix | High |
 | `/services` | Commercial investigation | technology engineering and consulting services | which service fits; engineering services overview | Technology Engineering & Consulting Services | High |
+| `/services/ai-engineering` | Commercial | AI development services | generative AI development services; AI integration services; RAG development; AI agent development; MLOps consulting; LLM evaluation; RAG vs fine-tuning; AI readiness | AI Development & Generative AI Integration Services | High (strategic). The head term is crowded, so the long tail is the realistic target. The page is named "AI Engineering", but that exact phrase is not targeted (see below). |
 | `/services/cloud-engineering` | Commercial | cloud engineering services | cloud consulting; cloud migration services; cloud landing zone; cloud cost optimization; rehost vs replatform vs refactor | Cloud Engineering & Consulting Services | High |
 | `/services/devops-engineering` | Commercial | devops consulting services | CI/CD implementation services; infrastructure as code; DORA metrics; deployment strategies; observability | DevOps Consulting & CI/CD Implementation Services | High (most open result pages observed) |
 | `/services/software-development` | Commercial | custom software development services | application modernization; build vs buy; API development and integration; custom software cost drivers | Custom Software Development & App Modernization | Medium (crowded head term; long tail is realistic) |
@@ -29,15 +30,16 @@ Rules applied:
 | `/industries/logistics-and-supply-chain` | Commercial | logistics technology consulting | supply chain data, integration | Logistics & Supply Chain Technology Consulting | Low–medium |
 | `/industries/software-and-technology` | Commercial | engineering partner for software companies | team extension, platform work | Engineering Partner for Software Companies | Medium |
 | `/approach` | Informational / trust | engineering delivery approach | how we work; discovery; handover | How We Work: Engineering Delivery Approach | Medium |
-| `/about` | Navigational / trust | about Nodeblix | engineering-led consultancy | About Nodeblix \| Engineering-Led Technology Consultancy | Medium |
+| `/about` | Navigational / trust | about Nodeblix | engineering-led consultancy | About Nodeblix \| AI-First Engineering Consultancy | Medium |
 | `/work`, `/work/*` | Trust | (none; illustrative scenarios) | method examples | Work: Illustrative Engineering Scenarios | Low. Labelled as scenarios, not client case studies. |
 | `/contact` | Transactional | contact Nodeblix | discuss a technology project | Contact Us: Discuss a Technology Project | High (conversion page) |
-| `/insights` | Informational hub | engineering insights | cloud, DevOps, data, CRM writing | Engineering Insights: Cloud, DevOps, Data & CRM | Medium |
+| `/insights` | Informational hub | engineering insights | AI, cloud, DevOps, data, CRM writing | Engineering Insights: AI, Cloud, DevOps & Data | Medium |
 
 ## Articles
 
 | URL | Primary keyword | Supports | Title tag |
 | --- | --- | --- | --- |
+| `/insights/llm-features-in-production` | LLM in production / generative AI from prototype to production | AI engineering | LLM Features in Production: From Demo to Dependable |
 | `/insights/cloud-migration-planning` | cloud migration planning | Cloud engineering | Cloud Migration Planning: Risks After the Kickoff |
 | `/insights/cloud-cost-governance` | cloud cost governance | Cloud engineering | Cloud Cost Governance: Ownership Over Dashboards |
 | `/insights/cicd-pipeline-design` | CI/CD pipeline design | DevOps | CI/CD Pipeline Design a Team Can Maintain |
@@ -53,6 +55,8 @@ Rules applied:
 
 | Topic | Owner page | Pages that mention it and link to the owner |
 | --- | --- | --- |
+| LLM applications, RAG, AI agents, LLM evaluation, MLOps/LLMOps | AI engineering | Data engineering (AI-ready data), DevOps (model and prompt releases), Software (AI assistance in internal tools), Analytics (AI assistants on the semantic layer), CRM (AI-drafted summaries), Cloud (GPU and managed model capacity) |
+| AI-ready data foundations | Data engineering | AI engineering (one capability that links to Data) |
 | Cloud migration, landing zones, 7 Rs | Cloud engineering | Software development, Microservices |
 | Application modernization | Software development | Microservices (as one modernization path), Cloud |
 | Monolith decomposition, modular monolith | Microservices | Software development |
@@ -67,4 +71,6 @@ Rules applied:
 - **"Salesforce implementation partner"** and similar partner terms. Those results belong to the vendors' partner directories, and claiming the term implies a credential Nodeblix has not verified.
 - **"Top / best [service] companies"**. These results are directory listicles.
 - **Head terms dominated by large integrators**, such as "cloud consulting services" and "application modernization services". They are covered as supporting language, not as primary targets.
+- **"AI engineering services"** as an exact phrase. On 25 October 2026, Google Autocomplete for it was dominated by *AI Engineering Services Limited*, an Air India aircraft-maintenance company, so the phrase would attract the wrong searchers. The page keeps the name "AI Engineering" for users but targets "AI development services" in the title.
+- **"Top / best AI development companies"**. These results are directory listicles, the same as the other "top N" terms.
 - **City or country modifiers** ("in London", "in India"). Nodeblix has no verified location to publish.

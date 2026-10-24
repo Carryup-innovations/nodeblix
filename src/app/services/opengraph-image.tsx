@@ -7,7 +7,7 @@ export const contentType = "image/png";
 export default function Image() {
   return renderOg({
     kicker: "Services",
-    title: "Seven engineering services, one accountable team",
+    title: "AI, cloud, software, and data engineering — one accountable team",
     image: "/images/cloud-infrastructure.jpg",
   });
 }

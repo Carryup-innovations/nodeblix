@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CardGrid } from "./CardGrid";
 import { CtaBand } from "./CtaBand";
 import {
+  AiSystemDiagram,
   CloudDiagram,
   CrmFlowDiagram,
   DataFlowDiagram,
@@ -14,10 +15,11 @@ import { Reveal } from "./Reveal";
 import { articles } from "@/content/articles";
 import { industries } from "@/content/industries";
 import { serviceGuides } from "@/content/service-guides";
-import { getServicesBySlugs, type Service } from "@/content/services";
+import { getServicesBySlugs, inSentence, type Service } from "@/content/services";
 import { graph, serviceSchema } from "@/lib/schema";
 
 function Diagram({ slug }: { slug: string }) {
+  if (slug === "ai-engineering") return <AiSystemDiagram />;
   if (slug === "cloud-engineering") return <CloudDiagram />;
   if (slug === "devops-engineering") return <PipelineDiagram />;
   if (slug === "microservices") return <ServiceMapDiagram />;
@@ -123,8 +125,8 @@ export function ServiceView({ service }: { service: Service }) {
       <section className="section">
         <div className="wrap">
           <p className="kicker">Capabilities</p>
-          <h2 style={{ margin: "12px 0 36px" }}>What our {service.name.toLowerCase()} work includes</h2>
-          <div className="tile-grid">
+          <h2 style={{ margin: "12px 0 36px" }}>What our {inSentence(service.name)} work includes</h2>
+          <div className="tile-grid m-rail" role="region" aria-label="Capabilities" tabIndex={0}>
             {service.capabilities.map((item, i) => (
               <Reveal key={item.title} delay={(i % 3) * 80}>
                 <article className="tile">
@@ -226,7 +228,7 @@ export function ServiceView({ service }: { service: Service }) {
                   {sectors.map((s) => (
                     <li key={s.slug}>
                       <Link href={`/industries/${s.slug}`}>
-                        {service.name} for {s.name.toLowerCase()}
+                        {service.name} for {inSentence(s.name)}
                       </Link>
                     </li>
                   ))}
@@ -325,7 +327,7 @@ export function ServiceView({ service }: { service: Service }) {
                 tag: "Service",
                 title: item.name,
                 copy: item.short,
-                more: `Explore ${item.name.toLowerCase()}`,
+                more: `Explore ${inSentence(item.name)}`,
               })),
               ...insights.map((item) => ({
                 href: `/insights/${item.slug}`,
@@ -341,7 +343,7 @@ export function ServiceView({ service }: { service: Service }) {
       </section>
 
       <CtaBand
-        title={`Start with ${service.name.toLowerCase()}`}
+        title={`Start with ${inSentence(service.name)}`}
         copy="If this is the constraint you are carrying, describe the current systems and what must not break. We will tell you what a first useful step looks like."
       />
     </main>

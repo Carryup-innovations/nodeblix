@@ -23,7 +23,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Nodeblix | Cloud, Software, Data & CRM Engineering",
+    default: "Nodeblix | AI, Cloud, Software & Data Engineering",
     template: "%s | Nodeblix",
   },
   description: site.description,

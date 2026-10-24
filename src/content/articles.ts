@@ -25,6 +25,88 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "llm-features-in-production",
+    title: "Taking an LLM feature from demo to production: what changes after the prototype",
+    seoTitle: "LLM Features in Production: From Demo to Dependable",
+    category: "AI Engineering",
+    date: "2026-10-24",
+    description:
+      "How to take a generative AI feature from prototype to production: defining good output, evaluation sets, RAG, guardrails, cost control, and monitoring.",
+    summary:
+      "A prototype proves a model can do the task once. Production needs a definition of good, an evaluation set, grounded data, guardrails, and someone watching cost and quality.",
+    image: "/images/insight-ai.jpg",
+    imageAlt: "Whiteboard sketch of a retrieval and evaluation loop beside a laptop showing quality charts",
+    relatedServices: ["ai-engineering", "data-engineering"],
+    relatedArticles: ["observability-production-readiness", "data-pipeline-reliability"],
+    takeaways: [
+      "Write down what a good answer looks like, with real examples, before choosing a model or framework.",
+      "An evaluation set that runs on every change is the difference between improving a feature and merely changing it.",
+      "Most production effort goes into data, permissions, guardrails, and cost — not into the prompt.",
+    ],
+    body: [
+      {
+        type: "p",
+        text: "The first demo of a language-model feature is usually persuasive. Someone pastes in a document, the model returns a tidy summary, and the room starts planning a rollout. The distance between that moment and a feature people rely on is not mostly about the model. It is about everything the demo did not have to answer: which inputs it will really see, what a wrong answer costs, where its facts come from, and how anyone will know when it gets worse.",
+      },
+      { type: "h2", text: "Define good before you build" },
+      {
+        type: "p",
+        text: "A prototype is judged by impression. A production feature needs a written standard. Collect real examples of the inputs the feature will meet — including the awkward ones — and agree with the people who own the workflow what a good, acceptable, and unacceptable output looks like for each. This becomes the evaluation set, and it is the most valuable artefact in the project.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Draw examples from real traffic, tickets, or documents, not invented prompts.",
+          "Include cases where the right behaviour is to refuse or ask for help.",
+          "Record why an answer is wrong, not only that it is, so the cause can be fixed.",
+        ],
+      },
+      { type: "h2", text: "Measure every change" },
+      {
+        type: "p",
+        text: "Prompts, models, retrieval settings, and provider versions all change behaviour, sometimes in ways nobody intended. Run the evaluation set on every change, in CI, and compare the score with the last release. Automated grading — including using a model to grade — is useful once it has been checked against human judgement on a sample. Without this, teams end up debating anecdotes.",
+      },
+      { type: "h2", text: "Ground the model in data it is allowed to use" },
+      {
+        type: "p",
+        text: "Most business questions depend on information the model was never trained on. Retrieval-augmented generation fetches relevant passages from your own sources and gives them to the model with the question. Its quality depends on unglamorous work: clean and current content, sensible chunking, ranking that finds the right passage, and permissions enforced at retrieval time so the assistant never shows a user something they could not open themselves.",
+      },
+      {
+        type: "callout",
+        text: "If the source content is out of date or contradictory, retrieval will faithfully deliver the contradiction. AI quality starts as a data problem.",
+      },
+      { type: "h2", text: "Put limits around what it can do" },
+      {
+        type: "p",
+        text: "Guardrails belong on both sides of the model. On the way in: strip or mask sensitive fields, detect attempts to override instructions, and reject inputs the feature was not designed for. On the way out: check structure, require citations where the answer depends on sources, and route low-confidence or high-impact cases to a person. Agents that call tools need tighter limits still — an approved list of actions and human sign-off for anything consequential.",
+      },
+      { type: "h2", text: "Watch cost and quality after launch" },
+      {
+        type: "p",
+        text: "Usage-based pricing means cost grows with success. Meter spend per feature, cache what repeats, and test whether a smaller model passes the evaluation set for simpler requests. Log every request with its prompt version, retrieved sources, and output, so a bad answer can be explained. Feed confirmed failures back into the evaluation set, and the feature improves on evidence rather than on hope.",
+      },
+      { type: "h2", text: "Release like any other production change" },
+      {
+        type: "p",
+        text: "Start with a small group of users who know they are early, watch real behaviour, and widen access in steps. Keep a rollback to the previous prompt and model version. Give the feature an owner who reviews quality and cost on a schedule. None of this is specific to AI — it is ordinary production discipline, applied to a component whose behaviour is less predictable than most.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How do you take an LLM prototype to production?",
+        a: "Define what good output looks like with real examples, turn them into an evaluation set that runs on every change, ground the model in permissioned company data where facts matter, add guardrails on input and output, log every request, meter cost per feature, and release to a small group before widening access with a rollback ready.",
+      },
+      {
+        q: "What is an LLM evaluation set?",
+        a: "A collection of realistic inputs with agreed expectations for each — correct answers, required sources, or the right refusal. Each version of the system is scored against it, so changes to prompts, models, or retrieval are compared on evidence. It grows over time as confirmed failures from production are added.",
+      },
+      {
+        q: "Why do generative AI pilots fail to reach production?",
+        a: "Common reasons are that nobody defined what good output means, the model has no reliable access to current company data, there is no way to measure whether a change helped, risks such as data exposure were not addressed, and running costs were never estimated. Each can be planned for from the start.",
+      },
+    ],
+  },
+  {
     slug: "cloud-migration-planning",
     title: "Cloud migration planning: the risks that appear after the kickoff",
     seoTitle: "Cloud Migration Planning: Risks After the Kickoff",
