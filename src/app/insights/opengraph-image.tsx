@@ -1,0 +1,13 @@
+import { renderOg } from "@/lib/og";
+
+export const alt = "Nodeblix insights";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+
+export default function Image() {
+  return renderOg({
+    kicker: "Insights",
+    title: "Practical writing on cloud, delivery, architecture, and data",
+    image: "/images/insight-architecture.jpg",
+  });
+}
