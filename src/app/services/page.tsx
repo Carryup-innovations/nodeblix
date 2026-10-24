@@ -63,7 +63,6 @@ export default function ServicesPage() {
         image="/images/cloud-infrastructure.jpg"
         alt="Data center aisle with orderly racks and cool lighting"
         crumbs={[{ href: "/", label: "Home" }, { label: "Services" }]}
-        kicker="Services"
         title="Technology engineering and consulting services"
         lede="Eight services across AI, cloud, delivery, software, data, analytics, and CRM. Each has its own problems, methods, and failure modes — the useful work is knowing which one is actually blocking the business, and which adjacent systems will have to move with it."
       />

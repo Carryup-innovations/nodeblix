@@ -71,7 +71,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             { href: "/insights", label: "Insights" },
             { label: item.category },
           ]}
-          kicker={item.category}
           title={item.title}
           lede={item.summary}
         >

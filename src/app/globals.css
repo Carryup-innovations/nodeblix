@@ -776,8 +776,8 @@ h3 {
 }
 
 .page-hero-home h1 {
-  max-width: 15ch;
-  font-size: clamp(2.7rem, 5.8vw, 4.75rem);
+  max-width: 19ch;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
   letter-spacing: -0.04em;
   line-height: 1.05;
 }
@@ -935,45 +935,6 @@ h3 {
 
 .statement-side p + p {
   margin-top: 14px;
-}
-
-/* ---------- Home: AI engineering ---------- */
-
-.ai-points {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0 32px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.ai-point {
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.ai-point-n {
-  display: block;
-  margin-bottom: 18px;
-  font: 600 13px var(--font-sans);
-  color: var(--blue-light);
-}
-
-.ai-point strong {
-  display: block;
-  margin-bottom: 8px;
-  font: 600 18px/1.3 var(--font-sans);
-  color: #fff;
-}
-
-.ai-point p {
-  font-size: 15px;
-  color: var(--on-dark-muted);
-}
-
-.ai-actions {
-  margin-top: 40px;
 }
 
 /* ---------- Pillars ---------- */
@@ -2350,11 +2311,6 @@ h3 {
   .entry {
     padding: 26px 22px;
   }
-
-  .ai-points {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px 32px;
-  }
 }
 
 @media (max-width: 1080px) {
@@ -2631,7 +2587,7 @@ h3 {
   }
 
   .page-hero-home .page-hero-media img {
-    object-position: 66% center;
+    object-position: 94% center;
   }
 
   .btn-lg {
@@ -2644,22 +2600,6 @@ h3 {
 @media (max-width: 640px) {
   .section {
     padding: 52px 0;
-  }
-
-  .ai-point {
-    padding-top: 18px;
-  }
-
-  .ai-point-n {
-    margin-bottom: 12px;
-  }
-
-  .ai-point strong {
-    font-size: 16px;
-  }
-
-  .ai-actions {
-    margin-top: 28px;
   }
 
   .section-head {
@@ -2703,11 +2643,6 @@ h3 {
   .m-rail > .reveal {
     opacity: 1;
     transform: none;
-  }
-
-  .ai-points.m-rail {
-    grid-auto-columns: 72%;
-    gap: 24px;
   }
 
   .m-rail > :last-child {

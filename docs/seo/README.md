@@ -48,7 +48,7 @@ The site already had a sound base: static App Router pages, `metadataBase` set t
 | Titles and descriptions | Reviewed on all 38 indexable URLs and rewritten where they missed search intent or length. Titles are unique, and descriptions are 70–170 characters. | Done |
 | H1s and heading hierarchy | Exactly one H1 per page and no skipped levels (verified by crawl) | Done |
 | Service pages | Definition, problems, capabilities, approach, decision table, use cases, industry links, trade-offs, 5–8 FAQs plus a definition answer, related services, CTA | Done |
-| Homepage | Plain-language company statement, an "AI engineering" section, and a six-question FAQ | Done |
+| Homepage | Plain-language company statement and a six-question FAQ | Done |
 | AI Engineering service | New `/services/ai-engineering` page (8th service) with a decision table, eight FAQs, an architecture diagram, and a supporting article. Linked from the navigation, footer, homepage, services index, every industry page, and related services. AI is mentioned on existing services only where the work genuinely involves it. | Done |
 | Services index | "Which service fits your problem?" table that routes each symptom to a service | Done |
 | Articles | SEO titles, key takeaways, two question-led answers each, primary-service link, published/updated dates | Done (dates need confirming, see launch checklist) |

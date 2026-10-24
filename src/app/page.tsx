@@ -69,25 +69,6 @@ const pillars = [
   },
 ];
 
-const aiPoints = [
-  [
-    "Grounded in your data",
-    "Answers come from permissioned company sources and cite them, so people can check the work.",
-  ],
-  [
-    "Measured before release",
-    "Every prompt, model, or retrieval change is scored against real test cases before it ships.",
-  ],
-  [
-    "Controlled in operation",
-    "Guardrails, human approval for consequential actions, and a trace of every request.",
-  ],
-  [
-    "Built to be swapped",
-    "The model is a component. Changing provider is a test run, not a rewrite.",
-  ],
-];
-
 const steps = [
   ["Discover", "Goals, systems, constraints, and who will live with the result."],
   ["Define", "Architecture, milestones, and what “good” looks like — written down."],
@@ -138,12 +119,11 @@ export default function HomePage() {
     <main id="main">
       <PageHero
         size="home"
-        image="/images/hero-ai.jpg"
-        alt="Two engineers reviewing an AI model, its evaluation charts, and a data pipeline on a large display in a high-rise studio at night"
+        image="/images/hero-skyline.jpg"
+        alt="Two engineers looking out over a city skyline at dusk from a high office floor"
         quality={90}
-        kicker="AI-first engineering partner"
-        title="AI and technology your business can depend on."
-        lede="AI applications, cloud, software, and data — designed, delivered, and operated to stay reliable as the organisation grows."
+        title="We engineer AI into the systems your business runs on."
+        lede="From LLM features and data platforms to cloud infrastructure and CRM, we design, build, and operate technology that holds up in production — and that your own team can run after launch."
       >
         <div className="btn-row">
           <Link className="btn btn-lg" href="/contact">
@@ -199,48 +179,6 @@ export default function HomePage() {
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="section section-navy" aria-labelledby="home-ai">
-        <div className="wrap">
-          <Reveal>
-            <div className="section-head">
-              <div>
-                <p className="kicker">AI engineering</p>
-                <h2 id="home-ai">AI that earns its place in production.</h2>
-              </div>
-              <p className="lede">
-                Language models, retrieval over company knowledge, and agents that act inside
-                clear limits — engineered on the same data, cloud, and delivery foundations we
-                build for everything else.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal>
-            <div
-              className="ai-points m-rail"
-              role="region"
-              aria-label="How we engineer AI"
-              tabIndex={0}
-            >
-              {aiPoints.map(([title, body], i) => (
-                <div key={title} className="ai-point">
-                  <span className="ai-point-n">{String(i + 1).padStart(2, "0")}</span>
-                  <strong>{title}</strong>
-                  <p>{body}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-          <div className="btn-row ai-actions">
-            <Link className="btn" href="/services/ai-engineering">
-              Explore AI engineering
-            </Link>
-            <Link className="btn-ghost btn-ghost-on-dark" href="/insights/llm-features-in-production">
-              From demo to production
-            </Link>
-          </div>
         </div>
       </section>
 

@@ -63,7 +63,6 @@ export function ServiceView({ service }: { service: Service }) {
           { href: "/services", label: "Services" },
           { label: service.name },
         ]}
-        kicker={service.name}
         title={service.h1}
         lede={service.lede}
       >

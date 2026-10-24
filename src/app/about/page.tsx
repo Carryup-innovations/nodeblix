@@ -27,7 +27,6 @@ export default function AboutPage() {
         image="/images/about-campus.jpg"
         alt="Quiet courtyard of a contemporary research campus"
         crumbs={[{ href: "/", label: "Home" }, { label: "About" }]}
-        kicker="About"
         title="Built around engineering. Focused on what matters."
         lede="Nodeblix exists to help organisations design, build, and modernize the systems they will still have to run next year."
       />

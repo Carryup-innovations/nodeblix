@@ -38,7 +38,6 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
           { href: "/industries", label: "Industries" },
           { label: item.name },
         ]}
-        kicker={item.name}
         title={item.h1}
         lede={item.lede}
       >

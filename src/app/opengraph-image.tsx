@@ -7,7 +7,7 @@ export const contentType = "image/png";
 export default function Image() {
   return renderOg({
     kicker: "Technology engineering & consulting",
-    title: "AI and technology your business can depend on",
-    image: "/images/hero-ai.jpg",
+    title: "We engineer AI into the systems your business runs on",
+    image: "/images/hero-skyline.jpg",
   });
 }

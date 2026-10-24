@@ -18,7 +18,7 @@ export function PageHero({
   image: string;
   alt: string;
   kicker?: string;
-  title: string;
+  title: ReactNode;
   lede?: string;
   crumbs?: Crumb[];
   children?: ReactNode;

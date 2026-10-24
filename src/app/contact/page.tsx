@@ -16,7 +16,6 @@ export default function ContactPage() {
         image="/images/hero-skyline.jpg"
         alt="Two engineers looking out over a city skyline at dusk from a high office floor"
         crumbs={[{ href: "/", label: "Home" }, { label: "Contact" }]}
-        kicker="Contact"
         title="Discuss a project"
         lede="Describe the systems involved, the constraint you cannot ignore, and what a useful next ninety days would look like."
       />

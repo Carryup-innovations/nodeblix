@@ -18,7 +18,6 @@ export default function WorkPage() {
         image="/images/work-platform.jpg"
         alt="Empty operations floor with a muted status wall and city light at the windows"
         crumbs={[{ href: "/", label: "Home" }, { label: "Work" }]}
-        kicker="Work"
         title="Method first. Named clients only when we can prove them."
         lede="Authorised case studies will appear here with real constraints and approved outcomes. Until then, these scenarios are clearly labeled illustrations of how we think — not delivery history."
       />

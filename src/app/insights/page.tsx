@@ -22,7 +22,6 @@ export default function InsightsPage() {
         image="/images/insight-architecture.jpg"
         alt="Concrete staircase and steel rail in a modern atrium"
         crumbs={[{ href: "/", label: "Home" }, { label: "Insights" }]}
-        kicker="Insights"
         title="Practical writing for people who have to live with the system."
         lede="Articles written to support real service conversations — migration, delivery, architecture, data, and CRM."
       />

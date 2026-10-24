@@ -26,7 +26,6 @@ export default function ApproachPage() {
         image="/images/approach-studio.jpg"
         alt="Architectural workshop table with drawings and a scale model"
         crumbs={[{ href: "/", label: "Home" }, { label: "Approach" }]}
-        kicker="Approach"
         title="A method you can inspect before we write a line of code."
         lede="Engagements start with the systems that already exist, the constraints that will not move, and a definition of done that operations can live with."
       />

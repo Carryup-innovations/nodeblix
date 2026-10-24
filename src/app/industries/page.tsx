@@ -20,7 +20,6 @@ export default function IndustriesPage() {
         image="/images/industry-logistics.jpg"
         alt="Twilight container port with stacked boxes and cranes over still water"
         crumbs={[{ href: "/", label: "Home" }, { label: "Industries" }]}
-        kicker="Industries"
         title="Sector constraints, written as they actually show up."
         lede="These pages describe operating patterns we expect in each sector. They are not a substitute for named experience — if a programme requires evidence of prior delivery, we will say so plainly."
       />
