@@ -136,7 +136,7 @@ export const services: Service[] = [
       { title: "Operate", body: "Monitored rollout, feedback captured into the test set, and a clear owner." },
     ],
     related: ["data-engineering", "software-development", "devops-engineering"],
-    relatedInsights: ["llm-features-in-production", "data-pipeline-reliability"],
+    relatedInsights: ["rag-vs-fine-tuning", "llm-features-in-production"],
   },
   {
     slug: "cloud-engineering",

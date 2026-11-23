@@ -1,7 +1,7 @@
 const productionUrl = "https://nodeblix.com";
 
 /** Bump when page copy changes materially; feeds sitemap lastmod. */
-export const contentUpdated = "2026-10-24";
+export const contentUpdated = "2026-11-23";
 
 /**
  * Indexing is on by default so a production deploy can never ship blocked by accident.

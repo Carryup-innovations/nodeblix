@@ -39,6 +39,7 @@ Rules applied:
 
 | URL | Primary keyword | Supports | Title tag |
 | --- | --- | --- | --- |
+| `/insights/rag-vs-fine-tuning` | RAG vs fine-tuning / when to use RAG vs fine-tuning | AI engineering | RAG vs Fine-Tuning: When to Use Each for Enterprise AI |
 | `/insights/llm-features-in-production` | LLM in production / generative AI from prototype to production | AI engineering | LLM Features in Production: From Demo to Dependable |
 | `/insights/cloud-migration-planning` | cloud migration planning | Cloud engineering | Cloud Migration Planning: Risks After the Kickoff |
 | `/insights/cloud-cost-governance` | cloud cost governance | Cloud engineering | Cloud Cost Governance: Ownership Over Dashboards |

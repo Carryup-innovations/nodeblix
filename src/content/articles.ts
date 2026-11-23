@@ -25,6 +25,191 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "rag-vs-fine-tuning",
+    title: "RAG vs fine-tuning: how to choose for enterprise AI (and when you need neither)",
+    seoTitle: "RAG vs Fine-Tuning: When to Use Each for Enterprise AI",
+    category: "AI Engineering",
+    date: "2026-11-23",
+    description:
+      "RAG vs fine-tuning for enterprise AI: when each fits, when prompting is enough, how permissions and evaluation change the choice, and how to combine both.",
+    summary:
+      "RAG fixes missing knowledge. Fine-tuning fixes unstable behaviour. Most teams start with prompts and an evaluation set, add retrieval when facts must be current and cited, and fine-tune only when the measured gap is still a behaviour problem.",
+    image: "/images/insight-rag.jpg",
+    imageAlt: "Engineering desk with a decision sketch, evaluation checklist on a laptop, and technical papers",
+    relatedServices: ["ai-engineering", "data-engineering"],
+    relatedArticles: ["llm-features-in-production", "data-pipeline-reliability"],
+    takeaways: [
+      "Build a real evaluation set before you choose RAG, fine-tuning, or a larger prompt — otherwise you are picking architecture by anecdote.",
+      "Use RAG when answers must draw on current, permissioned company knowledge and show their sources.",
+      "Use fine-tuning when prompting and retrieval still fail a measured behaviour gap — format, tone, classification, or a narrow skill — not to teach the model your latest policies.",
+      "Many valuable systems need neither: a well-structured prompt, short context, and a release gate are enough for the first production release.",
+    ],
+    body: [
+      {
+        type: "p",
+        text: "When an organisation decides to put a language model into a real workflow, the first architecture debate is usually the wrong one. Teams argue about vendors, frameworks, and whether to “do RAG” or “fine-tune a model”, before anyone has written down what a good answer looks like. The choice between retrieval-augmented generation and fine-tuning is real — and it matters — but it only becomes a useful decision after you know the job, the data, and how you will measure success.",
+      },
+      {
+        type: "p",
+        text: "This guide is for technology and product leaders who need a dependable AI feature, not a slide. It explains what RAG and fine-tuning actually change, when prompting or long context is enough, how enterprise constraints such as permissions and audit change the design, and how to decide without inventing a strategy for its own sake.",
+      },
+      { type: "h2", text: "What each approach actually changes" },
+      {
+        type: "p",
+        text: "Retrieval-augmented generation (RAG) searches your own content at query time — documents, tickets, product records, policies — and passes the relevant passages to the model with the question. The model still generates the answer, but it is grounded in material you control. Done well, the system can cite the passages it used, and it can refuse when nothing relevant was found.",
+      },
+      {
+        type: "p",
+        text: "Fine-tuning further trains a model on examples so its weights change. That can make output format, tone, classification labels, or a narrow skill more consistent. It does not give you a reliable way to point at a source document, and it does not keep pace with facts that change every week. Hyperscaler guidance is blunt on this point: fine-tuning is not a substitute for retrieval when the answer depends on current information.",
+      },
+      {
+        type: "ul",
+        items: [
+          "RAG changes the context the model sees for each request.",
+          "Fine-tuning changes how the model behaves across requests.",
+          "Prompting changes neither the weights nor the private knowledge store — it shapes the instruction for a single call or a versioned prompt.",
+        ],
+      },
+      {
+        type: "callout",
+        text: "If you can finish the sentence “the right answer changed when…”, you almost certainly have a knowledge problem. Retrieval is the tool. Fine-tuning will not keep up with that change.",
+      },
+      { type: "h2", text: "Start with prompting and an evaluation set" },
+      {
+        type: "p",
+        text: "Before RAG or fine-tuning, write the evaluation set. Collect fifty to two hundred real inputs from the workflow — including awkward ones — and agree what good, acceptable, and unacceptable outputs look like. Include cases where the right behaviour is to refuse, ask a clarifying question, or hand off to a person. Score every later design against that set. Without it, every demo looks like progress.",
+      },
+      {
+        type: "p",
+        text: "Many first releases need only a carefully structured prompt, a small amount of fixed context, and a release gate. Vendor documentation consistently recommends advanced prompting before tuning. Treat that as engineering advice, not marketing: a smaller system that passes the evaluation set beats a fashionable stack that nobody can measure.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Use prompting alone when the task is general, the required facts fit in a short prompt, and every user may see the same context.",
+          "Add long context or prompt caching when the document set is small, stable, and shared — and stuffing it into the call is cheaper than building retrieval.",
+          "Move on when evaluation shows a clear failure mode that more instructions cannot fix.",
+        ],
+      },
+      { type: "h2", text: "When RAG is the right default" },
+      {
+        type: "p",
+        text: "Choose retrieval-augmented generation when the answer depends on your organisation’s knowledge, and that knowledge is large, changing, permissioned, or must be attributed. Internal assistants over policies and runbooks, support copilots over ticket history, product Q&A over catalogues, and claim or contract intake that must point at a clause are classic RAG shapes.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Facts change independently of the model — pricing, inventory, policy revisions, account state.",
+          "Users must see which document or record an answer came from.",
+          "Different users are allowed to see different documents; access has to be enforced at retrieval time.",
+          "The corpus is too large to put into every prompt without waste.",
+        ],
+      },
+      {
+        type: "p",
+        text: "RAG is not “paste documents into a vector database and ship”. Quality lives in chunking, ranking, freshness, and permissions. Tables and PDFs chunked badly will never retrieve well. Duplicate or contradictory sources will be retrieved faithfully. A retriever that ignores who is asking will leak. Evaluation should separate whether the right evidence was found from whether the model used it correctly — and how the system behaves when evidence is missing or conflicting.",
+      },
+      {
+        type: "callout",
+        text: "Enterprise RAG fails as a data and access-control problem more often than as a model problem. Fix ownership, freshness, and permissions before you change the model.",
+      },
+      { type: "h2", text: "When fine-tuning earns its keep" },
+      {
+        type: "p",
+        text: "Fine-tuning is a candidate when prompting and retrieval still leave a measured behaviour gap, and you have high-quality labelled examples that represent the task. Typical targets are strict output schemas, classification into a fixed label set, a consistent institutional tone, extraction into known fields, or making a smaller, cheaper model good enough for a high-volume narrow job.",
+      },
+      {
+        type: "p",
+        text: "It is a weak choice when the goal is to teach the model your latest product facts or policies. Research comparing unsupervised fine-tuning with RAG has found retrieval stronger for knowledge the model never saw, and fine-tuning new facts can increase hallucination as those facts are absorbed. Microsoft’s own fine-tuning guidance says tuning does not replace retrieval for current information or application-level safety controls. If the pilot gives wrong answers about your products, inspect the sources and the retriever first.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Hold out evaluation data before you tune — never judge success on the examples used for training.",
+          "Prefer parameter-efficient methods when you need adapters you can version and roll back.",
+          "Plan for base-model retirement: a fine-tuned checkpoint is tied to a parent model that will eventually be replaced.",
+          "Expect an operations cost: training data curation, re-evaluation, and retraining when the task drifts.",
+        ],
+      },
+      { type: "h2", text: "RAG vs fine-tuning vs prompt engineering" },
+      {
+        type: "p",
+        text: "These are not rivals. Most production systems that work well combine the first two steps — a versioned prompt plus retrieval — and add fine-tuning only when evaluation still fails. Prompt engineering sets the task. RAG supplies private, current evidence. Fine-tuning stabilises behaviour the prompt cannot lock down cheaply.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Prompt engineering — best when general knowledge plus clear instructions and few-shot examples are enough.",
+          "RAG — best when answers need your documents or records, citations, freshness, or per-user permissions.",
+          "Fine-tuning — best when a consistent format, tone, or narrow skill remains after prompting and retrieval are in place.",
+          "Agents — only when the job genuinely needs multi-step tool use that cannot be fixed in a single grounded call; they compound error and need tighter limits.",
+        ],
+      },
+      { type: "h2", text: "A decision method you can run in a week" },
+      {
+        type: "p",
+        text: "Treat the choice as a short engineering exercise, not a strategy workshop. One week of disciplined work usually beats a quarter of architecture slides.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Day 1–2: pick one workflow, write the evaluation set with the people who own the outcome, and record what a wrong answer costs.",
+          "Day 3: score a strong prompt (and short fixed context if needed) against the set. Stop if it already passes.",
+          "Day 4–5: if failures are missing or stale facts, stand up a thin retrieval path over the real sources and re-score. Enforce permissions in the retriever.",
+          "Day 6–7: if failures are still format, classification, or style — and you have clean labels — run a small fine-tune or try a smaller specialised model, then compare cost and quality on the same set.",
+        ],
+      },
+      {
+        type: "p",
+        text: "At every step, keep the model replaceable. The evaluation set is the contract. Switching a hosted API for a self-hosted open-weight model, or changing a retrieval ranker, should be a configuration and testing exercise, not a rewrite.",
+      },
+      { type: "h2", text: "Enterprise constraints that change the design" },
+      {
+        type: "p",
+        text: "In a business setting, three constraints dominate the architecture more than brand preference for a model. First, identity: retrieval must respect the caller’s permissions, or the assistant becomes a bypass of existing access control. Second, privacy: check provider retention and training terms, prefer enterprise endpoints or models inside your own account where policy requires it, and mask sensitive fields before they leave your boundary. Third, operations: version prompts, indexes, and models; trace every request; meter cost per feature; and put a release gate in CI so a prompt change that fails the evaluation set never reaches customers.",
+      },
+      {
+        type: "p",
+        text: "Those controls are the same discipline you already apply to ordinary software — applied to a component whose behaviour is less deterministic. That is the practical meaning of AI engineering: not a separate science project, but production engineering around models, data, and evaluation.",
+      },
+      { type: "h2", text: "How this maps to buying and building" },
+      {
+        type: "p",
+        text: "If you are buying help, ask vendors to show the evaluation set, the retrieval and permission design, and the release gate — not only a demo transcript. If you are building in-house, invest first in data quality and ownership for the sources the feature will use; the model is the easy part to swap later. Packaged AI features inside tools you already license can be enough for common tasks. Custom RAG or fine-tuning pays off when the workflow, data, or controls are specific to your business.",
+      },
+      {
+        type: "p",
+        text: "Nodeblix’s AI engineering work follows this order: frame one workflow, define good with examples, prototype the simplest design that can pass, then harden retrieval, guardrails, tracing, and cost. Data engineering sits beside that work when the sources are not yet trustworthy enough to retrieve.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between RAG and fine-tuning?",
+        a: "RAG searches your documents or records at query time and gives the model the relevant passages so answers can use current, private knowledge and cite sources. Fine-tuning further trains the model so its behaviour — format, tone, classification, or a narrow skill — becomes more consistent. RAG changes the context per request; fine-tuning changes the model’s weights.",
+      },
+      {
+        q: "When should you use RAG instead of fine-tuning?",
+        a: "Use RAG when answers must draw on your own content, that content changes, users need citations, or different people may see different documents. Use fine-tuning when prompting and retrieval still leave a measured behaviour problem that labelled examples can fix. Fine-tuning is a poor way to keep a model up to date with new facts.",
+      },
+      {
+        q: "Is prompt engineering enough without RAG or fine-tuning?",
+        a: "Often for a first release. If a strong prompt and a short fixed context pass a real evaluation set, ship that and measure live use. Add retrieval when failures are about missing or stale company knowledge. Add fine-tuning when failures are about inconsistent behaviour that better prompts cannot lock down.",
+      },
+      {
+        q: "Can fine-tuning teach a model company policies and product facts?",
+        a: "Not reliably, and not as a substitute for retrieval. Fine-tuned knowledge goes stale when documents change, does not provide citations, and can increase hallucination when the model is trained on facts it did not already know. Keep policies and product data in sources the system retrieves under permission control.",
+      },
+      {
+        q: "How do you evaluate RAG and fine-tuning fairly?",
+        a: "Use the same held-out evaluation set for every variant. For RAG, score retrieval quality and answer quality separately, including refusals when evidence is missing. For fine-tuning, never score on the training examples. Compare latency and cost per request on the same set so a “smarter” option is not quietly unaffordable.",
+      },
+      {
+        q: "What is enterprise RAG architecture?",
+        a: "A typical design places a thin AI service between applications and the model: it retrieves from permissioned sources, assembles a versioned prompt, applies input and output checks, traces the request, and returns an answer with citations where required. Evaluation runs in CI. The model and the vector index are replaceable components behind that service.",
+      },
+    ],
+  },
+  {
     slug: "llm-features-in-production",
     title: "Taking an LLM feature from demo to production: what changes after the prototype",
     seoTitle: "LLM Features in Production: From Demo to Dependable",
@@ -37,7 +222,7 @@ export const articles: Article[] = [
     image: "/images/insight-ai.jpg",
     imageAlt: "Whiteboard sketch of a retrieval and evaluation loop beside a laptop showing quality charts",
     relatedServices: ["ai-engineering", "data-engineering"],
-    relatedArticles: ["observability-production-readiness", "data-pipeline-reliability"],
+    relatedArticles: ["rag-vs-fine-tuning", "observability-production-readiness"],
     takeaways: [
       "Write down what a good answer looks like, with real examples, before choosing a model or framework.",
       "An evaluation set that runs on every change is the difference between improving a feature and merely changing it.",

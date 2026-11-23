@@ -734,5 +734,6 @@ Added when the AI Engineering service (`/services/ai-engineering`) was created. 
 - Decision table: "Prompting, RAG, fine-tuning, or agents?" answers the *rag vs fine tuning (vs prompt engineering)* cluster.
 - FAQs: what RAG is, RAG vs fine-tuning, how to evaluate an LLM application, whether you need agents, AI development cost drivers (no prices), AI readiness, data privacy, and which models are used.
 - Supporting article: `/insights/llm-features-in-production` covers demo-to-production, evaluation sets, and why pilots stall.
+- Flagship decision article (23 November 2026): `/insights/rag-vs-fine-tuning` targets the *rag vs fine tuning / when to use* cluster with supporting terms *vs prompt engineering*, *enterprise RAG architecture*, and *how to evaluate LLMs before production*. Autocomplete for the cluster remains rich; no volumes stated.
 - No model-vendor partnership is claimed. Vendors are referred to generically ("commercial model APIs, managed model services on AWS, Azure, and Google Cloud, open-weight models").
 
