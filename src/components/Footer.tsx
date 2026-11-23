@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "./Logo";
 import { industries } from "@/content/industries";
 import { serviceLinks } from "@/lib/site";
 
@@ -14,7 +13,6 @@ export function Footer() {
       </div>
       <div className="wrap footer-grid">
         <div className="footer-brand">
-          <Logo invert />
           <p>
             Nodeblix designs, builds, and modernizes the technology systems businesses depend on to
             operate, adapt, and grow.
@@ -78,6 +76,11 @@ export function Footer() {
           {" · "}
           <Link href="/terms">Terms</Link>
         </p>
+      </div>
+      <div className="wrap footer-wordmark" aria-hidden="true">
+        <span>
+          nodebli<span>x</span>
+        </span>
       </div>
     </footer>
   );

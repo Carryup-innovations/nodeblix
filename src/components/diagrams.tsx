@@ -2,30 +2,30 @@ export function CloudDiagram() {
   return (
     <div className="diagram" role="img" aria-label="Cloud landing zone with identity, network, workloads, and operations">
       <svg viewBox="0 0 840 360" fill="none">
-        <rect x="20" y="24" width="200" height="312" rx="4" stroke="#2a3b55" />
-        <text x="40" y="52" fill="#9fb0c7" fontSize="12" fontFamily="ui-sans-serif">Identity</text>
-        <text x="40" y="84" fill="#e8eef7" fontSize="14">Directory / SSO</text>
-        <text x="40" y="110" fill="#8ea0b7" fontSize="12">Roles · least privilege</text>
-        <text x="40" y="150" fill="#e8eef7" fontSize="14">Secrets</text>
-        <text x="40" y="176" fill="#8ea0b7" fontSize="12">Short-lived credentials</text>
-        <rect x="248" y="24" width="344" height="312" rx="4" stroke="#2a3b55" />
-        <text x="268" y="52" fill="#9fb0c7" fontSize="12">Landing zone</text>
-        <rect x="268" y="72" width="140" height="88" rx="3" stroke="#246BFD" />
-        <text x="284" y="108" fill="#e8eef7" fontSize="13">Network</text>
-        <text x="284" y="128" fill="#8ea0b7" fontSize="11">Ingress · private paths</text>
-        <rect x="428" y="72" width="140" height="88" rx="3" stroke="#3d516c" />
-        <text x="444" y="108" fill="#e8eef7" fontSize="13">Workloads</text>
-        <text x="444" y="128" fill="#8ea0b7" fontSize="11">App · data · jobs</text>
-        <rect x="268" y="180" width="300" height="64" rx="3" stroke="#3d516c" />
-        <text x="284" y="218" fill="#e8eef7" fontSize="13">Observability · backup · cost owners</text>
-        <rect x="268" y="260" width="300" height="52" rx="3" stroke="#3d516c" />
-        <text x="284" y="292" fill="#e8eef7" fontSize="13">Infrastructure as code</text>
-        <rect x="620" y="24" width="200" height="312" rx="4" stroke="#2a3b55" />
-        <text x="640" y="52" fill="#9fb0c7" fontSize="12">Operations</text>
-        <text x="640" y="92" fill="#e8eef7" fontSize="14">CI / CD promote</text>
-        <text x="640" y="140" fill="#e8eef7" fontSize="14">Restore drill</text>
-        <text x="640" y="188" fill="#e8eef7" fontSize="14">Access review</text>
-        <text x="640" y="236" fill="#e8eef7" fontSize="14">Incident path</text>
+        <rect x="20" y="24" width="200" height="312" rx="4" stroke="#2a3830" />
+        <text x="40" y="52" fill="#a3ada4" fontSize="12" fontFamily="ui-sans-serif">Identity</text>
+        <text x="40" y="84" fill="#F4F6F0" fontSize="14">Directory / SSO</text>
+        <text x="40" y="110" fill="#858f86" fontSize="12">Roles · least privilege</text>
+        <text x="40" y="150" fill="#F4F6F0" fontSize="14">Secrets</text>
+        <text x="40" y="176" fill="#858f86" fontSize="12">Short-lived credentials</text>
+        <rect x="248" y="24" width="344" height="312" rx="4" stroke="#2a3830" />
+        <text x="268" y="52" fill="#a3ada4" fontSize="12">Landing zone</text>
+        <rect x="268" y="72" width="140" height="88" rx="3" stroke="#C5F467" />
+        <text x="284" y="108" fill="#F4F6F0" fontSize="13">Network</text>
+        <text x="284" y="128" fill="#858f86" fontSize="11">Ingress · private paths</text>
+        <rect x="428" y="72" width="140" height="88" rx="3" stroke="#3a4a40" />
+        <text x="444" y="108" fill="#F4F6F0" fontSize="13">Workloads</text>
+        <text x="444" y="128" fill="#858f86" fontSize="11">App · data · jobs</text>
+        <rect x="268" y="180" width="300" height="64" rx="3" stroke="#3a4a40" />
+        <text x="284" y="218" fill="#F4F6F0" fontSize="13">Observability · backup · cost owners</text>
+        <rect x="268" y="260" width="300" height="52" rx="3" stroke="#3a4a40" />
+        <text x="284" y="292" fill="#F4F6F0" fontSize="13">Infrastructure as code</text>
+        <rect x="620" y="24" width="200" height="312" rx="4" stroke="#2a3830" />
+        <text x="640" y="52" fill="#a3ada4" fontSize="12">Operations</text>
+        <text x="640" y="92" fill="#F4F6F0" fontSize="14">CI / CD promote</text>
+        <text x="640" y="140" fill="#F4F6F0" fontSize="14">Restore drill</text>
+        <text x="640" y="188" fill="#F4F6F0" fontSize="14">Access review</text>
+        <text x="640" y="236" fill="#F4F6F0" fontSize="14">Incident path</text>
       </svg>
     </div>
   );
@@ -37,15 +37,15 @@ export function PipelineDiagram() {
       <svg viewBox="0 0 840 200" fill="none">
         {["Commit", "Prove", "Artefact", "Staging", "Production"].map((label, i) => (
           <g key={label} transform={`translate(${24 + i * 164} 48)`}>
-            <rect width="140" height="72" rx="3" stroke={i === 4 ? "#246BFD" : "#3d516c"} />
-            <text x="16" y="42" fill="#e8eef7" fontSize="14">
+            <rect width="140" height="72" rx="3" stroke={i === 4 ? "#C5F467" : "#3a4a40"} />
+            <text x="16" y="42" fill="#F4F6F0" fontSize="14">
               {label}
             </text>
-            {i < 4 && <path d="M148 36h12" stroke="#8ea0b7" />}
+            {i < 4 && <path d="M148 36h12" stroke="#858f86" />}
           </g>
         ))}
-        <path d="M760 132v20H88v-20" stroke="#246BFD" strokeDasharray="4 4" />
-        <text x="88" y="176" fill="#9fb0c7" fontSize="12">
+        <path d="M760 132v20H88v-20" stroke="#C5F467" strokeDasharray="4 4" />
+        <text x="88" y="176" fill="#a3ada4" fontSize="12">
           Rollback uses the previous artefact, not a rebuild
         </text>
       </svg>
@@ -57,22 +57,22 @@ export function ServiceMapDiagram() {
   return (
     <div className="diagram" role="img" aria-label="Modular services with APIs, events, and owned data">
       <svg viewBox="0 0 840 320" fill="none">
-        <rect x="20" y="20" width="200" height="120" rx="4" stroke="#3d516c" />
-        <text x="36" y="48" fill="#9fb0c7" fontSize="12">Experience</text>
-        <text x="36" y="80" fill="#e8eef7" fontSize="14">Web / API façade</text>
-        <rect x="300" y="20" width="220" height="120" rx="4" stroke="#246BFD" />
-        <text x="316" y="48" fill="#9fb0c7" fontSize="12">Service A</text>
-        <text x="316" y="76" fill="#e8eef7" fontSize="14">Owns its data</text>
-        <text x="316" y="100" fill="#8ea0b7" fontSize="12">Sync API when an answer is needed</text>
-        <rect x="600" y="20" width="220" height="120" rx="4" stroke="#3d516c" />
-        <text x="616" y="48" fill="#9fb0c7" fontSize="12">Service B</text>
-        <text x="616" y="76" fill="#e8eef7" fontSize="14">Independent release</text>
-        <rect x="300" y="180" width="520" height="100" rx="4" stroke="#3d516c" />
-        <text x="316" y="216" fill="#9fb0c7" fontSize="12">Events</text>
-        <text x="316" y="244" fill="#e8eef7" fontSize="14">Facts other services may consume — not remote procedure calls</text>
-        <path d="M220 80h80" stroke="#8ea0b7" />
-        <path d="M410 140v40" stroke="#246BFD" />
-        <path d="M710 140v40" stroke="#8ea0b7" />
+        <rect x="20" y="20" width="200" height="120" rx="4" stroke="#3a4a40" />
+        <text x="36" y="48" fill="#a3ada4" fontSize="12">Experience</text>
+        <text x="36" y="80" fill="#F4F6F0" fontSize="14">Web / API façade</text>
+        <rect x="300" y="20" width="220" height="120" rx="4" stroke="#C5F467" />
+        <text x="316" y="48" fill="#a3ada4" fontSize="12">Service A</text>
+        <text x="316" y="76" fill="#F4F6F0" fontSize="14">Owns its data</text>
+        <text x="316" y="100" fill="#858f86" fontSize="12">Sync API when an answer is needed</text>
+        <rect x="600" y="20" width="220" height="120" rx="4" stroke="#3a4a40" />
+        <text x="616" y="48" fill="#a3ada4" fontSize="12">Service B</text>
+        <text x="616" y="76" fill="#F4F6F0" fontSize="14">Independent release</text>
+        <rect x="300" y="180" width="520" height="100" rx="4" stroke="#3a4a40" />
+        <text x="316" y="216" fill="#a3ada4" fontSize="12">Events</text>
+        <text x="316" y="244" fill="#F4F6F0" fontSize="14">Facts other services may consume — not remote procedure calls</text>
+        <path d="M220 80h80" stroke="#858f86" />
+        <path d="M410 140v40" stroke="#C5F467" />
+        <path d="M710 140v40" stroke="#858f86" />
       </svg>
     </div>
   );
@@ -82,42 +82,42 @@ export function AiSystemDiagram() {
   return (
     <div className="diagram" role="img" aria-label="AI service between applications and models, with retrieval, guardrails, tracing, and an evaluation gate">
       <svg viewBox="0 0 840 340" fill="none">
-        <rect x="20" y="24" width="168" height="292" rx="4" stroke="#2a3b55" />
-        <text x="40" y="52" fill="#9fb0c7" fontSize="12">Applications</text>
-        <text x="40" y="92" fill="#e8eef7" fontSize="14">Product feature</text>
-        <text x="40" y="140" fill="#e8eef7" fontSize="14">Internal tool</text>
-        <text x="40" y="188" fill="#e8eef7" fontSize="14">Workflow step</text>
-        <text x="40" y="236" fill="#8ea0b7" fontSize="12">User identity</text>
-        <text x="40" y="256" fill="#8ea0b7" fontSize="12">passed with every call</text>
-        <path d="M188 108h24" stroke="#8ea0b7" />
-        <rect x="212" y="24" width="400" height="292" rx="4" stroke="#2a3b55" />
-        <text x="232" y="52" fill="#9fb0c7" fontSize="12">AI service</text>
+        <rect x="20" y="24" width="168" height="292" rx="4" stroke="#2a3830" />
+        <text x="40" y="52" fill="#a3ada4" fontSize="12">Applications</text>
+        <text x="40" y="92" fill="#F4F6F0" fontSize="14">Product feature</text>
+        <text x="40" y="140" fill="#F4F6F0" fontSize="14">Internal tool</text>
+        <text x="40" y="188" fill="#F4F6F0" fontSize="14">Workflow step</text>
+        <text x="40" y="236" fill="#858f86" fontSize="12">User identity</text>
+        <text x="40" y="256" fill="#858f86" fontSize="12">passed with every call</text>
+        <path d="M188 108h24" stroke="#858f86" />
+        <rect x="212" y="24" width="400" height="292" rx="4" stroke="#2a3830" />
+        <text x="232" y="52" fill="#a3ada4" fontSize="12">AI service</text>
         {["Guardrails", "Retrieval", "Model", "Checks"].map((label, i) => (
           <g key={label} transform={`translate(${232 + i * 92} 72)`}>
-            <rect width="80" height="72" rx="3" stroke={i === 2 ? "#246BFD" : "#3d516c"} />
-            <text x="10" y="42" fill="#e8eef7" fontSize="12">
+            <rect width="80" height="72" rx="3" stroke={i === 2 ? "#C5F467" : "#3a4a40"} />
+            <text x="10" y="42" fill="#F4F6F0" fontSize="12">
               {label}
             </text>
-            {i < 3 && <path d="M82 36h8" stroke="#8ea0b7" />}
+            {i < 3 && <path d="M82 36h8" stroke="#858f86" />}
           </g>
         ))}
-        <rect x="232" y="164" width="172" height="64" rx="3" stroke="#3d516c" />
-        <text x="248" y="192" fill="#e8eef7" fontSize="13">Permissioned sources</text>
-        <text x="248" y="212" fill="#8ea0b7" fontSize="11">Docs · tickets · records</text>
-        <path d="M364 164v-20" stroke="#8ea0b7" />
-        <rect x="420" y="164" width="172" height="64" rx="3" stroke="#3d516c" />
-        <text x="436" y="192" fill="#e8eef7" fontSize="13">Replaceable model</text>
-        <text x="436" y="212" fill="#8ea0b7" fontSize="11">Hosted API or self-hosted</text>
-        <path d="M456 164v-20" stroke="#8ea0b7" />
-        <rect x="232" y="244" width="360" height="52" rx="3" stroke="#3d516c" />
-        <text x="248" y="276" fill="#e8eef7" fontSize="13">Tracing · prompt versions · cost per feature</text>
-        <rect x="636" y="24" width="184" height="292" rx="4" stroke="#2a3b55" />
-        <text x="656" y="52" fill="#9fb0c7" fontSize="12">Evaluation</text>
-        <text x="656" y="92" fill="#e8eef7" fontSize="14">Test set</text>
-        <text x="656" y="140" fill="#e8eef7" fontSize="14">Release gate in CI</text>
-        <text x="656" y="188" fill="#e8eef7" fontSize="14">Live monitoring</text>
-        <text x="656" y="236" fill="#e8eef7" fontSize="14">Feedback to tests</text>
-        <path d="M612 108h24" stroke="#246BFD" strokeDasharray="4 4" />
+        <rect x="232" y="164" width="172" height="64" rx="3" stroke="#3a4a40" />
+        <text x="248" y="192" fill="#F4F6F0" fontSize="13">Permissioned sources</text>
+        <text x="248" y="212" fill="#858f86" fontSize="11">Docs · tickets · records</text>
+        <path d="M364 164v-20" stroke="#858f86" />
+        <rect x="420" y="164" width="172" height="64" rx="3" stroke="#3a4a40" />
+        <text x="436" y="192" fill="#F4F6F0" fontSize="13">Replaceable model</text>
+        <text x="436" y="212" fill="#858f86" fontSize="11">Hosted API or self-hosted</text>
+        <path d="M456 164v-20" stroke="#858f86" />
+        <rect x="232" y="244" width="360" height="52" rx="3" stroke="#3a4a40" />
+        <text x="248" y="276" fill="#F4F6F0" fontSize="13">Tracing · prompt versions · cost per feature</text>
+        <rect x="636" y="24" width="184" height="292" rx="4" stroke="#2a3830" />
+        <text x="656" y="52" fill="#a3ada4" fontSize="12">Evaluation</text>
+        <text x="656" y="92" fill="#F4F6F0" fontSize="14">Test set</text>
+        <text x="656" y="140" fill="#F4F6F0" fontSize="14">Release gate in CI</text>
+        <text x="656" y="188" fill="#F4F6F0" fontSize="14">Live monitoring</text>
+        <text x="656" y="236" fill="#F4F6F0" fontSize="14">Feedback to tests</text>
+        <path d="M612 108h24" stroke="#C5F467" strokeDasharray="4 4" />
       </svg>
     </div>
   );
@@ -129,13 +129,13 @@ export function DataFlowDiagram() {
       <svg viewBox="0 0 840 220" fill="none">
         {["Sources", "Raw land", "Transform", "Certified", "Analytics"].map((label, i) => (
           <g key={label} transform={`translate(${20 + i * 164} 40)`}>
-            <rect width="148" height="100" rx="3" stroke={i === 3 ? "#246BFD" : "#3d516c"} />
-            <text x="16" y="56" fill="#e8eef7" fontSize="14">
+            <rect width="148" height="100" rx="3" stroke={i === 3 ? "#C5F467" : "#3a4a40"} />
+            <text x="16" y="56" fill="#F4F6F0" fontSize="14">
               {label}
             </text>
           </g>
         ))}
-        <text x="20" y="180" fill="#9fb0c7" fontSize="12">
+        <text x="20" y="180" fill="#a3ada4" fontSize="12">
           Tests and lineage sit on the arrows — a green job is not the same as trustworthy data
         </text>
       </svg>
@@ -149,16 +149,16 @@ export function CrmFlowDiagram() {
       <svg viewBox="0 0 840 180" fill="none">
         {["Identify", "Qualify", "Propose", "Deliver", "Serve"].map((label, i) => (
           <g key={label} transform={`translate(${24 + i * 164} 36)`}>
-            <circle cx="28" cy="28" r="18" stroke="#246BFD" />
-            <text x="22" y="33" fill="#e8eef7" fontSize="12">
+            <circle cx="28" cy="28" r="18" stroke="#C5F467" />
+            <text x="22" y="33" fill="#F4F6F0" fontSize="12">
               {i + 1}
             </text>
-            <text x="56" y="34" fill="#e8eef7" fontSize="14">
+            <text x="56" y="34" fill="#F4F6F0" fontSize="14">
               {label}
             </text>
           </g>
         ))}
-        <text x="24" y="130" fill="#9fb0c7" fontSize="12">
+        <text x="24" y="130" fill="#a3ada4" fontSize="12">
           Finance remains the system of record for money. Support remains the system of record for tickets.
         </text>
       </svg>
@@ -178,7 +178,7 @@ export function ProcessDiagram() {
     <ol className="process" style={{ listStyle: "none" }}>
       {steps.map(([n, t, d]) => (
         <li className="process-step" key={n}>
-          <span className="kicker" style={{ color: "#7aa0ff" }}>
+          <span className="kicker" style={{ color: "var(--accent)" }}>
             {n}
           </span>
           <div>

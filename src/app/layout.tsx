@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@/components/Analytics";
 import { Header } from "@/components/Header";
@@ -39,7 +39,14 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#E9EDE5" },
+    { media: "(prefers-color-scheme: dark)", color: "#101310" },
+  ],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${plusJakarta.variable} ${inter.variable}`}>
       <body>

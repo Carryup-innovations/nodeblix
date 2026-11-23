@@ -26,7 +26,7 @@ export async function renderOg({
 
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", background: "#0B1220" }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", background: "#101310" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={photoSrc}
@@ -43,7 +43,7 @@ export async function renderOg({
             width: 560,
             height: 630,
             display: "flex",
-            background: "linear-gradient(90deg, #0B1220 0%, rgba(11,18,32,0.55) 45%, rgba(11,18,32,0.1) 100%)",
+            background: "linear-gradient(90deg, #101310 0%, rgba(16,19,16,0.55) 45%, rgba(16,19,16,0.1) 100%)",
           }}
         />
         <div
@@ -57,15 +57,15 @@ export async function renderOg({
             padding: "64px 0 60px 72px",
           }}
         >
-          <div style={{ display: "flex", fontFamily: "Jakarta", fontSize: 40, color: "#F6F8FB", letterSpacing: -1 }}>
-            nodebli<span style={{ color: "#3882F6" }}>x</span>
+          <div style={{ display: "flex", fontFamily: "Jakarta", fontSize: 40, color: "#F4F6F0", letterSpacing: -1 }}>
+            nodebli<span style={{ color: "#C5F467" }}>x</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div
               style={{
                 fontFamily: "Inter",
                 fontSize: 22,
-                color: "#7fa8ff",
+                color: "#C5F467",
                 letterSpacing: 2,
                 textTransform: "uppercase",
                 marginBottom: 22,
@@ -78,15 +78,15 @@ export async function renderOg({
                 fontFamily: "Jakarta",
                 fontSize: titleSize,
                 lineHeight: 1.08,
-                color: "#FFFFFF",
+                color: "#F4F6F0",
                 letterSpacing: -1.5,
               }}
             >
               {title}
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", fontFamily: "Inter", fontSize: 22, color: "#AEB8C7" }}>
-            <div style={{ width: 36, height: 3, background: "#246BFD", marginRight: 16 }} />
+          <div style={{ display: "flex", alignItems: "center", fontFamily: "Inter", fontSize: 22, color: "#858F86" }}>
+            <div style={{ width: 36, height: 3, background: "#C5F467", marginRight: 16 }} />
             nodeblix.com
           </div>
         </div>
